@@ -1,22 +1,79 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
+
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import Layout from "../components/layout/layout"
+import Image from "../components/homepage/image"
+
+import bgImage from "../images/main_page.png"
+
+import './homepage.scss'
+
+const IndexPage = ({ data }) => {
+  //console.log(data.allGraphCmsLandingPage.edges[0].node)
+
+  let dataFromCMS = data.allGraphCmsLandingPage.edges[0].node;
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div
+        className="homepage__wrapper"
+      >
+        <div
+          className="homepage__content"
+        >
+          <h1>
+            {dataFromCMS.paragraph1}
+          </h1>
+          <p>
+            {dataFromCMS.paragraph2}
+          </p>
+          <p>
+            {dataFromCMS.paragraph3}
+          </p>
+          <div>
+            <h4>
+              {dataFromCMS.linksHeading}
+            </h4>
+            <Link 
+              to="/liift-my-business/"
+              style={{
+                marginRight: '16px'
+              }}
+            >
+              {dataFromCMS.liiiftMyBusiness}
+            </Link>
+            <Link to="/liiift-myself/">
+              {dataFromCMS.liiiftMyself}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+}
+
 
 export default IndexPage
+
+
+export const query = graphql`
+  query IndexPageQuery {
+    allGraphCmsLandingPage {
+      edges {
+        node {
+          id
+          liiiftMyBusiness
+          liiiftMyself
+          linksHeading
+          paragraph1 
+          paragraph2
+          paragraph3
+        }
+      }
+    }
+  }
+`

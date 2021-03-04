@@ -1,0 +1,13 @@
+fragment LandingPage on LandingPage {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  paragraph1 
+  paragraph2
+  paragraph3
+  linksHeading
+  liiiftMyBusiness
+  liiiftMyself
+}

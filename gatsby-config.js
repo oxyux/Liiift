@@ -1,17 +1,32 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Liiift`,
+    description: `Liiift your business`,
+    author: `Liift`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        indentedSyntax: false
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: 'gatsby-source-graphcms',
+        options: {
+          // Your GraphCMS API endpoint. Available from your project settings.
+          endpoint: "https://api-eu-central-1.graphcms.com/v2/cklik2c2c8qjy01z6a5kj6tx4/master"
+          // A PAT (Permanent Auth Token) for your project. Required if your project is not available publicly, or you want to scope access to a specific content stage (i.e. draft content).
+          //token: process.env.GRAPHCMS_TOKEN
+        },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

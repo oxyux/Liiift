@@ -1,0 +1,8 @@
+fragment CaseStudy on CaseStudy {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  test
+}
