@@ -89,7 +89,7 @@ const LiiiftMyBusinessPage = ({
               }}
               entry={{
                 delay: 0.6,
-                state: { x: window.innerWidth }
+                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
               }}
             >
               {edge.node.lDeviceTitle}

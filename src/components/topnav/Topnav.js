@@ -36,7 +36,7 @@ const TopnavDesktopLinkWithDropdown = ({
         }}
         entry={{
           delay: 0.6,
-          state: { x: window.innerWidth }
+          state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
         }}
       >
         {mainLinkText}
@@ -61,7 +61,7 @@ const TopnavDesktopLinkWithDropdown = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
               >
                 {link.lDeviceTitle}
@@ -100,7 +100,7 @@ const TopnavMobileSublinksSection = ({
             }}
             entry={{
               delay: 0.6,
-              state: { x: window.innerWidth }
+              state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
             }}
             onClick={() => handleCloseTopnav()}
           >
@@ -197,7 +197,7 @@ const Topnav = ({
               }}
               entry={{
                 delay: 0.6,
-                state: { x: window.innerWidth }
+                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
               }}
             >
               THE 3 I ’S
@@ -213,7 +213,7 @@ const Topnav = ({
               }}
               entry={{
                 delay: 0.6,
-                state: { x: window.innerWidth }
+                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
               }}
             >
               BLOG
@@ -260,7 +260,7 @@ const Topnav = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
                 className="topnavMobile__link"
                 onClick={() => handleCloseTopnav()}
@@ -278,7 +278,7 @@ const Topnav = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
                 className="topnavMobile__link"
                 onClick={() => handleCloseTopnav()}
@@ -307,7 +307,7 @@ const Topnav = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
                 className="topnavMobile__link"
                 onClick={() => handleCloseTopnav()}
@@ -336,7 +336,7 @@ const Topnav = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
                 className="topnavMobile__link"
                 onClick={() => handleCloseTopnav()}
@@ -354,7 +354,7 @@ const Topnav = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
                 className="topnavMobile__link"
                 onClick={() => handleCloseTopnav()}
@@ -372,7 +372,7 @@ const Topnav = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
                 className="topnavMobile__link"
                 onClick={() => handleCloseTopnav()}

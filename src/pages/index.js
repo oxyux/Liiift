@@ -92,7 +92,7 @@ const IndexPage = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
               >
                 {dataFromCMS.liiiftMyBusiness}
@@ -108,7 +108,7 @@ const IndexPage = ({
                 }}
                 entry={{
                   delay: 0.6,
-                  state: { x: window.innerWidth }
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
               >
                 {dataFromCMS.liiiftMyself}
