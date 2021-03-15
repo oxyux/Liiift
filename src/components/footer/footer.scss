@@ -1,0 +1,27 @@
+.footer {
+
+    .footer__ctaDiv {
+        margin-top: 8rem;
+        
+        background-color: var(--main-color-biege);
+
+        color: var(--main-color-dark);
+
+        height: 250px;
+        width: 100%;
+    }
+    .footer__navDiv {
+        background-color: var(--main-color-dark);
+        color: #FFFFFF;
+
+        height: 250px;
+        width: 100%;
+    }
+    .footer__bottomDecoration {
+        background-color: var(--secondary-color-green);
+        color: #FFFFFF;
+
+        height: 25px;
+        width: 100%;
+    }
+}

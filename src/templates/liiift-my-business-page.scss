@@ -1,0 +1,56 @@
+.liiift-my-business-page_Page {
+
+    .liiift-my-business-page_Page__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'title'
+        'header'
+        'body'
+        'links'
+        'img'
+        ;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .pageContent__title {
+            grid-area: title;
+        }
+        .pageContent__header {
+            grid-area: header;
+        }
+        .pageContent__body {
+            grid-area: body;
+        }
+
+
+        @media (min-width: 769px) {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-areas: 
+            'title '
+            'header '
+            'body'
+            ;
+            
+            padding-left: 5vw;
+            padding-right: 0;
+
+            .pageContent__title {
+
+            }
+            .pageContent__header {
+
+            }
+            .pageContent__body {
+
+            }
+        }
+
+        @media (min-width: 1200px) {
+            padding-left: 12vw;
+            
+        }
+    }
+}

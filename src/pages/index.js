@@ -1,58 +1,123 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import TransitionLink from 'gatsby-plugin-transition-link';
 
 
 import SEO from "../components/seo"
 
 import Layout from "../components/layout/layout"
-import Image from "../components/homepage/image"
-
-import bgImage from "../images/main_page.png"
 
 import './homepage.scss'
+import { AnimatePresence, motion } from "framer-motion";
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ 
+  data, 
+  mount, transitionStatus, entry, exit
+}) => {
   //console.log(data.allGraphCmsLandingPage.edges[0].node)
 
   let dataFromCMS = data.allGraphCmsLandingPage.edges[0].node;
 
   return (
-    <Layout>
-      <SEO title="Home" />
-      <div
-        className="homepage__wrapper"
+    <AnimatePresence>
+      <motion.div
+        initial={entry.state}
+        animate={
+          transitionStatus === "exiting"
+          ?
+          exit.state 
+          :
+          { opacity: 1, x: 0, y: 0 }
+        }
+        transition={
+          transitionStatus === "exiting"
+          ?
+          { duration: exit.length }
+          :
+          { duration: 0.4 }
+        }
       >
+        <SEO title="Home" />
         <div
-          className="homepage__content"
+          className="homepage__wrapper"
         >
-          <h1>
-            {dataFromCMS.paragraph1}
-          </h1>
-          <p>
-            {dataFromCMS.paragraph2}
-          </p>
-          <p>
-            {dataFromCMS.paragraph3}
-          </p>
-          <div>
-            <h4>
-              {dataFromCMS.linksHeading}
-            </h4>
-            <Link 
-              to="/liift-my-business/"
-              style={{
-                marginRight: '16px'
-              }}
-            >
-              {dataFromCMS.liiiftMyBusiness}
-            </Link>
-            <Link to="/liiift-myself/">
-              {dataFromCMS.liiiftMyself}
-            </Link>
+          <div
+            className="logoDiv"
+          >
+            <svg version="1.1" viewBox="0 0 1300 565.35" xmlns="http://www.w3.org/2000/svg">
+              <g data-name="Layer 2">
+                <g data-name="Layer 1">
+                <g className="cls-2" transform="translate(-520)" clipPath="url(#clipPath)" fill="#ffa6ab">
+                  <path className="cls-3" d="m1113.1 0c28.55 0 50.82 20 50.82 49.1s-22.27 49.11-50.82 49.11-50.81-20-50.81-49.11 22.26-49.1 50.81-49.1"/>
+                  <path className="cls-3" d="m823.89 0c28.55 0 50.82 20 50.82 49.1s-22.27 49.11-50.82 49.11-50.81-20-50.81-49.11 22.27-49.1 50.81-49.1"/>
+                </g>
+                <path d="m253.08 165.26h101.63v266.91h-101.63z" fill="#ffa6ab"/>
+                <g className="cls-2" transform="translate(-520)" clipPath="url(#clipPath)">
+                  <path className="cls-3" d="m968.31 0c28.55 0 50.82 20 50.82 49.1s-22.27 49.11-50.82 49.11-50.82-20-50.82-49.11 22.27-49.1 50.82-49.1" fill="#ffa6ab"/>
+                </g>
+                <path d="m397.85 165.26h101.64v266.91h-101.64z" fill="#ffa6ab"/>
+                <path d="m542.98 165.26h101.64v266.91h-101.64z" fill="#ffa6ab"/>
+                <path d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z" fill="#fff"/>
+                <g className="cls-2" transform="translate(-520)" clipPath="url(#clipPath)" fill="#fff">
+                  <path className="cls-4" d="m1820.5 247.53v-82.27h-109.7v-124.26h-101.63v124.26h-204.89v-58.08c0-16.13 8.07-24.2 22.59-24.2h69.37v-82.27h-104.86c-53.24 0-88.73 35.49-88.73 90.34v74.21h-101.62v82.27h101.64v317.82h101.63v-317.82h204.89v227.47c0 54.85 35.49 90.35 88.73 90.35h112.91v-82.28h-77.44c-14.52 0-22.59-8.07-22.59-24.2v-211.34z" fill="#fff"/>
+                </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div
+            className="homepage__content"
+          >
+            <h1>
+              Welcome to L<span style={{color: `var(--main-color-peach)`}}>iii</span>ft. Welcome to a consultancy that delivers benefits to companies and people; in a real world way – no theorising; purely pragmatism.
+            </h1>
+            <p>
+              {dataFromCMS.paragraph2}
+            </p>
+            <p>
+              {dataFromCMS.paragraph3}
+            </p>
+            <div>
+              <h4>
+                {dataFromCMS.linksHeading}
+              </h4>
+              <TransitionLink
+                to="/liiift-my-business/"
+                style={{
+                  marginRight: '16px'
+                }}
+                exit={{
+                  length: 0.8,
+                  state: { x: -window.innerWidth, opacity: 0 }
+                }}
+                entry={{
+                  delay: 0.6,
+                  state: { x: window.innerWidth }
+                }}
+              >
+                {dataFromCMS.liiiftMyBusiness}
+              </TransitionLink>
+              <TransitionLink
+                to="/liiift-myself/"
+                style={{
+                  marginRight: '16px'
+                }}
+                exit={{
+                  length: 0.8,
+                  state: { x: -window.innerWidth, opacity: 0 }
+                }}
+                entry={{
+                  delay: 0.6,
+                  state: { x: window.innerWidth }
+                }}
+              >
+                {dataFromCMS.liiiftMyself}
+              </TransitionLink>
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

@@ -1,0 +1,327 @@
+.lDeviceMain__container {
+    position: relative;
+
+    height: 400px;
+
+    .lDeviceMain__svgImgWrapper {
+        position: relative;
+    
+        height: 272px;
+
+        .lDeviceMain__svgDiv {
+            position: relative;
+    
+            height: 100%;
+    
+            z-index: 2;
+    
+            svg {
+                position: absolute;
+                bottom: 0;
+                left: 5%;
+    
+                width: 90%;
+                height: 150px;
+            }
+    
+        }
+    
+        .lDeviceMain__imgDiv {
+            position: absolute;
+            top: 0;
+            right: 0;
+    
+            z-index: 1;
+    
+            width: 80vw;
+            height: 250px;
+    
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                display: block;
+                width: auto;
+                height: 230px;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    .lDeviceMain__titleDiv {
+        color: var(--main-color-peach);
+        font-size: 28px;
+        font-weight: bold;
+
+        text-align: right;
+
+        padding: 2rem;
+    }
+
+@media (min-width: 350px) {
+    height: 400px;
+
+    .lDeviceMain__svgImgWrapper {
+        position: relative;
+    
+        height: 285px;
+
+        .lDeviceMain__svgDiv {
+            position: relative;
+    
+            height: 100%;
+    
+            z-index: 2;
+    
+            svg {
+                position: absolute;
+                bottom: 0;
+                left: 5%;
+    
+                width: 90%;
+                height: 150px;
+            }
+    
+        }
+    
+        .lDeviceMain__imgDiv {
+            position: absolute;
+            top: 0;
+            right: 0;
+    
+            z-index: 1;
+    
+            width: 80vw;
+            height: 250px;
+    
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                display: block;
+                width: auto;
+                height: 250px;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    .lDeviceMain__titleDiv {
+        color: var(--main-color-peach);
+        font-size: 28px;
+        font-weight: bold;
+
+        text-align: right;
+
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 480px) {
+    height: 600px;
+
+    .lDeviceMain__svgImgWrapper {
+        position: relative;
+    
+        height: 395px;
+
+        .lDeviceMain__svgDiv {
+            position: relative;
+    
+            height: 100%;
+    
+            z-index: 2;
+    
+            svg {
+                position: absolute;
+                bottom: 0;
+                left: initial;
+                right: 80px;
+    
+                width: 460px;
+                height: 190px;
+            }
+    
+        }
+    
+        .lDeviceMain__imgDiv {
+            position: absolute;
+            top: 0;
+            right: 0;
+    
+            z-index: 1;
+    
+            width: 80vw;
+            height: 350px;
+    
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                display: block;
+                width: auto;
+                height: 350px;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    .lDeviceMain__titleDiv {
+        color: var(--main-color-peach);
+        font-size: 28px;
+        font-weight: bold;
+
+        text-align: right;
+
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 769px) {
+    height: 424px;
+
+    .lDeviceMain__svgImgWrapper {
+        width: 100%;
+        height: 424px;
+
+        display: flex;
+        align-items: flex-end;
+
+        .lDeviceMain__svgDiv {
+            width: 550px;
+    
+            svg {
+                right: initial;
+                left: 20px;
+    
+                width: 530px;
+                height: 270px;
+            }
+    
+        }
+    
+        .lDeviceMain__imgDiv {
+            right: initial;
+            left: 90px;
+            img {
+                right: initial;
+                left: 0;
+            }
+        }
+    }
+
+
+    .lDeviceMain__titleDiv {
+        text-align: left;
+        padding-bottom: 1rem;
+        padding-right: 0;
+
+        font-size: 32px;
+        line-height: 34px;
+    }
+}
+@media (min-width: 1200px) {
+    min-height: 90vh;
+    height: fit-content;
+
+    margin-bottom: 10vh;
+
+    .lDeviceMain__svgImgWrapper {
+        width: 100%;
+        height: 755px;
+
+        display: flex;
+        align-items: flex-end;
+
+        .lDeviceMain__svgDiv {
+            width: 1024px;
+    
+            svg {
+                right: initial;
+                left: 20px;
+    
+                width: 1000px;
+                height: 440px;
+            }
+    
+        }
+    
+        .lDeviceMain__imgDiv {
+            right: initial;
+            left: 140px;
+            img {
+                height: 650px;
+            }
+        }
+    }
+
+
+    .lDeviceMain__titleDiv {
+        text-align: left;
+        padding-bottom: 0;
+        padding-right: 0;
+
+        font-size: 34px;
+        line-height: 36px;
+
+        @media (min-width: 1400px) {
+            font-size: 54px;
+            line-height: 56px;
+        }
+    }
+}
+
+@media (min-width: 1800px) {
+    .lDeviceMain__svgImgWrapper {
+        width: 100%;
+        height: 855px;
+
+        display: flex;
+        align-items: flex-end;
+
+        .lDeviceMain__svgDiv {
+            width: 1124px;
+    
+            svg {
+                right: initial;
+                left: 20px;
+    
+                width: 1100px;
+                height: 540px;
+            }
+    
+        }
+    
+        .lDeviceMain__imgDiv {
+            right: initial;
+            left: 140px;
+            img {
+                height: 711px;
+            }
+        }
+    }
+
+
+    .lDeviceMain__titleDiv {
+        text-align: left;
+        padding-bottom: 0;
+        padding-right: 0;
+
+        font-size: 34px;
+        line-height: 36px;
+
+        @media (min-width: 1400px) {
+            font-size: 84px;
+            line-height: 88px;
+
+            padding-bottom: 1rem;
+        }
+    }
+}
+}

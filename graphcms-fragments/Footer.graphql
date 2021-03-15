@@ -1,0 +1,7 @@
+fragment Footer on Footer {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+}

@@ -1,10 +1,12 @@
 import "@fontsource/space-grotesk"
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Topnav from "../topnav/Topnav.js"
+
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -16,12 +18,28 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
+
+  const [isTopnavOpen, setIsTopNavOpen] = useState(false);
+
+  const handleToggleTopnav = () => {
+    setIsTopNavOpen(isTopnavOpen => !isTopnavOpen);
+  }
+  const handleCloseTopnav = () => {
+    setIsTopNavOpen(false);
+  }
 
   return (
     <>
       <div>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header 
+        isTopnavOpen={isTopnavOpen}
+        handleToggleTopnav={handleToggleTopnav}
+      />
+      <Topnav 
+        isOpen={isTopnavOpen}
+        handleCloseTopnav={handleCloseTopnav}
+      />
       <main
         style={{
           minHeight: `100vh`

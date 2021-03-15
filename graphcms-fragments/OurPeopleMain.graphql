@@ -1,0 +1,44 @@
+fragment OurPeopleMain on OurPeopleMain {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  lDeviceTitle
+  lDeviceImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  headerMain
+  bodyMain
+  headerExperts
+  expert1Title
+  expert1Body
+  expert1Image {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  expert2Title
+  expert2Body
+  expert2Image {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  expertsVideoUrl
+  expertsVideoTitle
+  headerClients
+  clientsVideoUrl
+  clientsVideoTitle
+}

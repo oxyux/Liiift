@@ -13,6 +13,28 @@ body {
   --main-color-biege: #DBD6D1;
   --secondary-color-green: #265565;
 }
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-color-biege);
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+
+  cursor: pointer;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--main-color-biege);
+  border-radius: 6px;
+  border: 1px solid transparent;
+
+  cursor: pointer;
+}
+
 article,
 aside,
 details,

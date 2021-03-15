@@ -1,0 +1,20 @@
+fragment LiiiftMyselfPage on LiiiftMyselfPage {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  slug
+  lDeviceTitle
+  lDeviceImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  header
+  body
+  title
+}

@@ -1,10 +1,9 @@
-fragment CaseStudy on CaseStudy {
+fragment LiiiftMyBusinessMain on LiiiftMyBusinessMain {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
-  slug
   lDeviceTitle
   lDeviceImage {
     ... on Asset {
@@ -14,16 +13,10 @@ fragment CaseStudy on CaseStudy {
       stage
     }
   }
+  title
   header
-  body {
-    ... on RichText {
-      raw
-      html
-      markdown
-      text
-    }
-  }
-  bottomImage {
+  body
+  bodyImage {
     ... on Asset {
       remoteTypeName: __typename
       remoteId: id
@@ -31,13 +24,4 @@ fragment CaseStudy on CaseStudy {
       stage
     }
   }
-  bottomQuoteBody {
-    ... on RichText {
-      raw
-      html
-      markdown
-      text
-    }
-  }
-  bottomQuoteAuthor
 }

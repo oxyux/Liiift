@@ -11,5 +11,96 @@ fragment Asset on Asset {
   width
   size
   mimeType
+  lDeviceImageLiiiftMyBusinessMain {
+    ... on LiiiftMyBusinessMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  bodyImageLiiiftMyBusinessMain {
+    ... on LiiiftMyBusinessMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageLiiiftMyselfMain {
+    ... on LiiiftMyselfMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  bodyImageLiiiftMyselfMain {
+    ... on LiiiftMyselfMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageOurPeopleMain {
+    ... on OurPeopleMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  expert1ImageOurPeopleMain {
+    ... on OurPeopleMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageThree_is {
+    ... on Three_is {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageCaseStudy {
+    ... on CaseStudy {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  bottomImageCaseStudy {
+    ... on CaseStudy {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageLiiiftMyBusinessPage {
+    ... on LiiiftMyBusinessPage {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageLiiiftMyselfPage {
+    ... on LiiiftMyselfPage {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  headerImageBlogPost {
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  expert2ImageOurPeopleMain {
+    ... on OurPeopleMain {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   url
 }

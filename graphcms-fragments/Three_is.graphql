@@ -1,0 +1,19 @@
+fragment Three_is on Three_is {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  lDeviceTitle
+  lDeviceImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  para1
+  para2
+  para3
+}

@@ -1,0 +1,292 @@
+.our-people_Page {
+
+    .our-people_Page__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'title'
+        'header'
+        'body'
+        'links'
+        'img'
+        ;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .pageContent__title {
+            grid-area: title;
+        }
+        .pageContent__header {
+            grid-area: header;
+        }
+        .pageContent__body {
+            grid-area: body;
+        }
+
+
+        @media (min-width: 769px) {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-areas: 
+            'title '
+            'header '
+            'body'
+            ;
+            
+            padding-left: 5vw;
+            padding-right: 0;
+
+            .pageContent__title {
+
+            }
+            .pageContent__header {
+
+            }
+            .pageContent__body {
+
+            }
+        }
+
+        @media (min-width: 1200px) {
+            padding-left: 12vw;
+            
+        }
+    }
+
+    .our-people_Page__expertsSection {
+        background-color: var(--main-color-peach);
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'header'
+        'expert_1'
+        'expert_2'
+        'videoDiv'
+        ;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+        
+        padding-bottom: 4rem;
+
+        .pageContent__header {
+            grid-area: header;
+
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .our-people_Page__expertDiv {
+        }
+
+        .our-people_Page__videoDiv {
+            grid-area: videoDiv;
+
+            position: relative;
+
+            
+            padding-bottom: 1rem;
+
+            .our-people_Page__videoDiv__video {
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                iframe {         
+                  display: block;
+                  width: 100%
+                }
+            }
+            .our-people_Page__videoDiv__svg {
+                display: none;
+            }
+        }
+
+
+        @media (min-width: 769px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            'header header'
+            'expert_1 expert_2'
+            'videoDiv videoDiv'
+            ;
+            
+            padding-left: 5vw;
+            padding-right: 5vw;
+
+            .pageContent__header {   
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+            }
+
+            .our-people_Page__expertDiv {
+                margin-right: 48px;            
+            }
+
+            .our-people_Page__videoDiv {   
+
+                min-height: 500px;
+                
+
+                .our-people_Page__videoDiv__video {
+                    width: 100%;
+
+                    iframe {
+                        display: block;
+                        width: 90vw;
+                        margin-left: auto;
+                        margin-right: auto;
+                        height: calc(90vh/1.4);
+                    }
+                }
+
+                .our-people_Page__videoDiv__svg {
+                    display: block;
+
+                    position: absolute;
+                    left: -48px;
+                    bottom: 0;
+
+                    width: 250px;
+
+                }
+            }
+        }
+
+        @media (min-width: 1200px) {
+            padding-left: 12vw;
+            
+        }
+    }
+
+    .our-people_Page__clientsSection {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'header'
+        'videoDiv'
+        'caseStudiesSlider'
+        ;
+
+
+        .pageContent__header {
+            grid-area: header;
+
+            padding-left: 1rem;
+
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .our-people_Page__videoDiv {
+            grid-area: videoDiv;
+
+            position: relative;
+
+            
+
+            .our-people_Page__videoDiv__video {
+
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                
+                    
+                margin-bottom: 1rem;
+
+                iframe {
+         
+                  display: block;
+                  width: calc(100vw - 2rem);
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+            }
+            .our-people_Page__videoDiv__svg {
+                display: none;
+            }
+        }
+
+        .caseStudiesSlider {
+            grid-area: caseStudiesSlider;
+
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+
+        @media (min-width: 769px) {
+            //padding-right: 5vw;
+
+            .pageContent__header {   
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+
+                padding-left: 5vw;
+            }
+
+            .our-people_Page__videoDiv {   
+                position: relative;
+
+                min-height: 500px;
+
+                padding-left: 5vw;
+                padding-right: 5vw;
+
+                @media (min-width: 1200px) {
+                    padding-left: 12vw;
+                }
+               
+
+                .our-people_Page__videoDiv__video {
+                    width: 92%;
+                   
+                    iframe {
+                        display: block;
+                        width: 90vw;
+                        margin-left: auto;
+                        margin-right: auto;
+                        height: calc(90vh/1.4);
+
+                        // @media (min-width: 1200px) {
+                        //     width: 80vw;
+                        // }
+                    }
+
+
+                }
+
+                .our-people_Page__videoDiv__svg {
+                    display: block;
+
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+
+
+                    width: 250px;
+
+                    @media (min-width: 1200px) {
+                        left: 9vw;
+                    }
+
+                }
+            }
+
+            .caseStudiesSlider {
+                padding-left: 5vw;
+
+                @media (min-width: 1200px) {
+                    padding-left: 8vw;
+                }
+            }
+        }
+
+
+    }
+}

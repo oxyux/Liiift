@@ -1,0 +1,29 @@
+fragment BlogPost on BlogPost {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  type
+  videoUrl
+  slug
+  headerImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  title
+  previewText
+  body {
+    ... on RichText {
+      raw
+      html
+      markdown
+      text
+    }
+  }
+  publicationDate
+}
