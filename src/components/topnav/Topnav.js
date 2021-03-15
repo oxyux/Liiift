@@ -32,7 +32,7 @@ const TopnavDesktopLinkWithDropdown = ({
         }}
         exit={{
           length: 0.4,
-          state: { x: window && -window.innerWidth, opacity: 0 }
+          state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
         }}
         entry={{
           delay: 0.6,
@@ -57,7 +57,7 @@ const TopnavDesktopLinkWithDropdown = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -96,7 +96,7 @@ const TopnavMobileSublinksSection = ({
             }}
             exit={{
               length: 0.4,
-              state: { x: window && -window.innerWidth, opacity: 0 }
+              state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
             }}
             entry={{
               delay: 0.6,
@@ -193,7 +193,7 @@ const Topnav = ({
               }}
               exit={{
                 length: 0.4,
-                state: { x: window && -window.innerWidth, opacity: 0 }
+                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
               }}
               entry={{
                 delay: 0.6,
@@ -209,7 +209,7 @@ const Topnav = ({
               }}
               exit={{
                 length: 0.4,
-                state: { x: window && -window.innerWidth, opacity: 0 }
+                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
               }}
               entry={{
                 delay: 0.6,
@@ -256,7 +256,7 @@ const Topnav = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -274,7 +274,7 @@ const Topnav = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -303,7 +303,7 @@ const Topnav = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -332,7 +332,7 @@ const Topnav = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -350,7 +350,7 @@ const Topnav = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -368,7 +368,7 @@ const Topnav = ({
                 }}
                 exit={{
                   length: 0.4,
-                  state: { x: window && -window.innerWidth, opacity: 0 }
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,

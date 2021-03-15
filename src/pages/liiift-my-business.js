@@ -85,7 +85,7 @@ const LiiiftMyBusinessPage = ({
               }}
               exit={{
                 length: 0.4,
-                state: { x: window && -window.innerWidth, opacity: 0 }
+                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
               }}
               entry={{
                 delay: 0.6,
