@@ -88,7 +88,7 @@ const IndexPage = ({
                 }}
                 exit={{
                   length: 0.8,
-                  state: { x: -window.innerWidth, opacity: 0 }
+                  state: { x: window && -window.innerWidth, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
@@ -104,7 +104,7 @@ const IndexPage = ({
                 }}
                 exit={{
                   length: 0.8,
-                  state: { x: -window.innerWidth, opacity: 0 }
+                  state: { x: window && -window.innerWidth, opacity: 0 }
                 }}
                 entry={{
                   delay: 0.6,
