@@ -35,11 +35,11 @@ const BlogPostPage = ({
           { duration: 0.4 }
         }
       >
-        <SEO title={blogPost.lDeviceTitle} />
+        <SEO title={blogPost.title} />
         <div>
           <LDevicePage
-            lDeviceImage={blogPost.lDeviceImage}
-            lDeviceTitle={blogPost.lDeviceTitle}
+            lDeviceImage={blogPost.headerImage}
+            lDeviceTitle={blogPost.title}
           />
         </div>
         <div
