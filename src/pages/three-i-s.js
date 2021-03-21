@@ -15,7 +15,7 @@ const ThreeIsPage = ({
 }) => {
   let dataFromCMS = data.allGraphCmsThreeIs.edges[0].node;
 
-  console.log(dataFromCMS)
+  let dataCTAlinks = data.allGraphCmsFooter.edges[0].node;
 
   return (
     <motion.div
@@ -36,7 +36,10 @@ const ThreeIsPage = ({
       { duration: 0.4 }
     }
   >
-    <SEO title="Three i's of Liiift" />
+    <SEO 
+      title="Three i's of Liiift" 
+      description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Three i's of Liiift`}
+    />
       <div>
         <LDevicePage
           lDeviceImage={dataFromCMS.lDeviceImage}
@@ -102,12 +105,34 @@ const ThreeIsPage = ({
           </p>
         </section>
         <section
-          className={`threeIsSection`}
+          className={`threeIsSection threeIsSection_CTA`}
           style={{
             backgroundColor: '#FFFFFF'
           }}
         >
-
+          <div
+              className="ctaDiv__message"
+          >
+              Ready to be Liiifted?
+          </div>
+          <div
+              className="ctaDiv__buttonsDiv"
+          >
+              <div>
+                  <a
+                      href={`mailto:${dataCTAlinks.contactEmail}`}
+                  >
+                      Drop us a line
+                  </a>
+              </div>
+              <div>
+                  <a
+                      href={`tel:${dataCTAlinks.contactPhone}`}
+                  >
+                      Give us a call
+                  </a>
+              </div>
+          </div>
         </section>
       </div>
     <Footer 
@@ -129,11 +154,21 @@ query ThreeIsQuery {
           para1
           para2
           para3
+          metaDescription
           lDeviceImage {
             url
             fileName
           }
           lDeviceTitle
+        }
+      }
+    }
+
+    allGraphCmsFooter {
+      edges {
+        node {
+          contactEmail
+          contactPhone
         }
       }
     }

@@ -11,7 +11,8 @@
     z-index: 9;
 
     height: 3rem;
-    width: 70vw;
+    min-width: 70vw;
+    max-width: 95vw;
 
     transform: translateX(100vw);
 

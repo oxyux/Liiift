@@ -22,9 +22,6 @@ const OurPeoplePage = ({
   let dataFromCMS = data.allGraphCmsOurPeopleMain.edges[0].node;
   let caseStudies = data.allGraphCmsCaseStudy.edges
 
-  console.log(dataFromCMS)
-  console.log(caseStudies)
-
   return (
     <motion.div
     className={`our-people_Page`}
@@ -44,7 +41,10 @@ const OurPeoplePage = ({
       { duration: 0.4 }
     }
   >
-    <SEO title="Our People" />
+    <SEO 
+      title="Our People" 
+      description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Our People`}
+    />
     <div>
       <LDevicePage
         lDeviceImage={dataFromCMS.lDeviceImage}
@@ -123,9 +123,9 @@ const OurPeoplePage = ({
           <iframe 
             width="560" height="315" 
             src={dataFromCMS.expertsVideoUrl}
-            frameborder="0" 
+            frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
+            allowFullScreen
           >
           </iframe>
         </div>
@@ -176,9 +176,9 @@ const OurPeoplePage = ({
           <iframe 
             width="560" height="315" 
             src={dataFromCMS.clientsVideoUrl}
-            frameborder="0" 
+            frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
+            allowFullScreen
           >
           </iframe>
         </div>
@@ -211,10 +211,10 @@ const OurPeoplePage = ({
             </clipPath>
         </svg>
       </div>
-      <CaseStudiesSlider
-        caseStudies={caseStudies}
-      />
     </div>
+    <CaseStudiesSlider
+      caseStudies={caseStudies}
+    />
     <Footer />
   </motion.div>
   );
@@ -268,6 +268,10 @@ query OurPeopleQuery {
           slug
           lDeviceTitle
           lDeviceImage {
+            url
+            fileName
+          }
+          sliderImage {
             url
             fileName
           }

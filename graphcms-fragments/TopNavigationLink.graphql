@@ -1,0 +1,9 @@
+fragment TopNavigationLink on TopNavigationLink {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  text
+  slug
+}

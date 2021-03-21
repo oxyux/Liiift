@@ -1,22 +1,19 @@
-fragment BlogPost on BlogPost {
+fragment CustomPage on CustomPage {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
   slug
-  type
-  headerImage {
-    ... on Asset {
-      remoteTypeName: __typename
-      remoteId: id
-      locale
-      stage
+  title
+  lead {
+    ... on RichText {
+      raw
+      html
+      markdown
+      text
     }
   }
-  headerVideoUrl
-  title
-  previewText
   blocks {
     ... on ImageGrid {
       remoteTypeName: __typename
@@ -29,7 +26,14 @@ fragment BlogPost on BlogPost {
       stage
     }
   }
-  author
-  publicationDate
   metaDescription
+  lDeviceTitle
+  lDeviceImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
 }

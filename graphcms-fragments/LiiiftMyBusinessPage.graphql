@@ -17,4 +17,5 @@ fragment LiiiftMyBusinessPage on LiiiftMyBusinessPage {
   title
   header
   body
+  metaDescription
 }

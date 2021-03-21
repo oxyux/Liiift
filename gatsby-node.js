@@ -1,77 +1,52 @@
 const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
-    const {
-        data: { 
-            caseStudies,
-            blogPosts,
-            liiiftMyBusinessPages,
-            liiiftMyselfPages
-        },
-    } = await graphql(`
+    const { data } = await graphql(`
       {
+        customPages: allGraphCmsCustomPage {
+            nodes {
+                id
+                slug
+            }
+        }
         caseStudies: allGraphCmsCaseStudy {
             nodes {
-                body {
-                    html
-                }
                 id
-                header
                 slug
-                lDeviceTitle
-                lDeviceImage {
-                    url
-                    fileName
-                }
             }
         }
         blogPosts: allGraphCmsBlogPost {
             nodes {
-                type
-                title
-                slug
                 id
-                headerImage {
-                    url
-                    fileName
-                }
-                previewText
-                publicationDate
-                body {
-                    html
-                }
+                slug
             }
         }
         liiiftMyBusinessPages: allGraphCmsLiiiftMyBusinessPage {
             nodes {
-                body
                 id
                 slug
-                header
-                lDeviceTitle
-                lDeviceImage {
-                    fileName
-                    url
-                }
             }
         }
         liiiftMyselfPages: allGraphCmsLiiiftMyselfPage {
             nodes {
-                body
                 id
                 slug
-                header
-                lDeviceTitle
-                lDeviceImage {
-                    fileName
-                    url
-                }
             }
         }
       }
     `);
 
-    caseStudies.nodes.forEach(({ id, slug }) => {
+    data.customPages && data.customPages.nodes && data.customPages.nodes.forEach(({ id, slug }) => {
+        createPage({
+            path: `/${slug}`,
+            component: path.resolve(`./src/templates/custom-page.js`),
+            context: {
+                id
+            }
+        })
+    });
+
+    data.caseStudies && data.caseStudies.nodes && data.caseStudies.nodes.forEach(({ id, slug }) => {
         createPage({
             path: `/our-people/${slug}`,
             component: path.resolve(`./src/templates/case-study-page.js`),
@@ -81,19 +56,17 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         })
     });
 
-    blogPosts.nodes.forEach(({ id, slug, type }) => {
-        if (type === 'post') {
-            createPage({
-                path: `/blog/${slug}`,
-                component: path.resolve(`./src/templates/blog-post-page.js`),
-                context: {
-                    id
-                }
-            })
-        }
+    data.blogPosts && data.blogPosts.nodes && data.blogPosts.nodes.forEach(({ id, slug }) => {
+        createPage({
+            path: `/blog/${slug}`,
+            component: path.resolve(`./src/templates/blog-post-page.js`),
+            context: {
+                id
+            }
+        });
     });
 
-    liiiftMyBusinessPages.nodes.forEach(({ id, slug }) => {
+    data.liiiftMyBusinessPages && data.liiiftMyBusinessPages.nodes && data.liiiftMyBusinessPages.nodes.forEach(({ id, slug }) => {
         createPage({
             path: `/liiift-my-business/${slug}`,
             component: path.resolve(`./src/templates/liiift-my-business-page.js`),
@@ -103,7 +76,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         })
     });
 
-    liiiftMyselfPages.nodes.forEach(({ id, slug }) => {
+    data.liiiftMyselfPages && data.liiiftMyselfPages.nodes && data.liiiftMyselfPages.nodes.forEach(({ id, slug }) => {
         createPage({
             path: `/liiift-myself/${slug}`,
             component: path.resolve(`./src/templates/liiift-myself-page.js`),

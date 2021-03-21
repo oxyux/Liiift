@@ -1,12 +1,10 @@
-fragment Footer on Footer {
+fragment RichTextBlock on RichTextBlock {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
-  contactEmail
-  contactPhone
-  address {
+  richTextBlock {
     ... on RichText {
       raw
       html
@@ -14,8 +12,15 @@ fragment Footer on Footer {
       text
     }
   }
-  footerNavigationLinks {
-    ... on FooterNavigationLink {
+  customPage {
+    ... on CustomPage {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  blogPost {
+    ... on BlogPost {
       remoteTypeName: __typename
       remoteId: id
       stage

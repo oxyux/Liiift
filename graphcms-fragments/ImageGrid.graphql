@@ -1,11 +1,12 @@
-fragment LiiiftMyselfMain on LiiiftMyselfMain {
+fragment ImageGrid on ImageGrid {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
-  lDeviceTitle
-  lDeviceImage {
+  columns
+  rows
+  image {
     ... on Asset {
       remoteTypeName: __typename
       remoteId: id
@@ -13,16 +14,18 @@ fragment LiiiftMyselfMain on LiiiftMyselfMain {
       stage
     }
   }
-  header
-  body
-  bodyImage {
-    ... on Asset {
+  customPage {
+    ... on CustomPage {
       remoteTypeName: __typename
       remoteId: id
-      locale
       stage
     }
   }
-  title
-  metaDescription
+  blogPost {
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
 }

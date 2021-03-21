@@ -10,4 +10,5 @@ fragment LandingPage on LandingPage {
   linksHeading
   liiiftMyBusiness
   liiiftMyself
+  metaDescription
 }

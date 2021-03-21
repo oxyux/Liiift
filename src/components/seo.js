@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import favicon from '../images/l-favicon.svg'
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { site, allGraphCmsSeo } = useStaticQuery(
     graphql`
       query {
         site {
@@ -23,12 +23,27 @@ function SEO({ description, lang, meta, title }) {
             author
           }
         }
+
+        allGraphCmsSeo {
+          edges {
+            node {
+              ogImage {
+                id
+                handle
+                fileName
+                url
+              }
+            }
+          }
+        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+
+  const ogImageURL = allGraphCmsSeo.edges[0] ? allGraphCmsSeo.edges[0].node.ogImage.url : ''
 
   return (
     <Helmet
@@ -45,6 +60,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          property: `pg:image`,
+          content: ogImageURL
         },
         {
           property: `og:description`,

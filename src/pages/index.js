@@ -14,7 +14,7 @@ const IndexPage = ({
   data, 
   mount, transitionStatus, entry, exit
 }) => {
-  //console.log(data.allGraphCmsLandingPage.edges[0].node)
+
 
   let dataFromCMS = data.allGraphCmsLandingPage.edges[0].node;
 
@@ -37,7 +37,10 @@ const IndexPage = ({
           { duration: 0.4 }
         }
       >
-        <SEO title="Home" />
+        <SEO 
+          title="Home" 
+          description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift Consultancy agency based in Liverpool`}
+        />
         <div
           className="homepage__wrapper"
         >
@@ -131,6 +134,7 @@ export const query = graphql`
       edges {
         node {
           id
+          metaDescription
           liiiftMyBusiness
           liiiftMyself
           linksHeading

@@ -41,4 +41,5 @@ fragment OurPeopleMain on OurPeopleMain {
   headerClients
   clientsVideoUrl
   clientsVideoTitle
+  metaDescription
 }

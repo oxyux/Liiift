@@ -36,7 +36,10 @@ const LiiiftMyBusinessSeparatePage = ({
           { duration: 0.4 }
         }
       >
-        <SEO title={pageData.lDeviceTitle} />
+        <SEO 
+          title={pageData.lDeviceTitle} 
+          description={pageData.metaDescription ? pageData.metaDescription : ``}
+        />
         <div>
           <LDevicePage
             lDeviceImage={pageData.lDeviceImage}
@@ -76,6 +79,7 @@ export const pageQuery = graphql`
             slug
             header
             title
+            metaDescription
             lDeviceTitle
             lDeviceImage {
                 fileName

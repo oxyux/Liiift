@@ -1,12 +1,10 @@
-fragment LiiiftMyselfPage on LiiiftMyselfPage {
+fragment Seo on Seo {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
-  slug
-  lDeviceTitle
-  lDeviceImage {
+  ogImage {
     ... on Asset {
       remoteTypeName: __typename
       remoteId: id
@@ -14,8 +12,4 @@ fragment LiiiftMyselfPage on LiiiftMyselfPage {
       stage
     }
   }
-  header
-  body
-  title
-  metaDescription
 }

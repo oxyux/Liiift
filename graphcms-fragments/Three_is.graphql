@@ -16,4 +16,5 @@ fragment Three_is on Three_is {
   para1
   para2
   para3
+  metaDescription
 }

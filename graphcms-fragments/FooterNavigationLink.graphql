@@ -1,0 +1,16 @@
+fragment FooterNavigationLink on FooterNavigationLink {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  text
+  slug
+  footer {
+    ... on Footer {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}

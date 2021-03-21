@@ -102,5 +102,33 @@ fragment Asset on Asset {
       stage
     }
   }
+  imageImageGrid {
+    ... on ImageGrid {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  lDeviceImageCustomPage {
+    ... on CustomPage {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  sliderImageCaseStudy {
+    ... on CaseStudy {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  ogImageSeo {
+    ... on Seo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   url
 }

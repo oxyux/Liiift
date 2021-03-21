@@ -22,10 +22,6 @@ const LiiiftMyselfPage = ({
 
   let pages = data.allGraphCmsLiiiftMyselfPage.edges
 
-  console.log(dataFromCMS)
-
-  console.log(pages)
-
   return (
     <motion.div
     className={`liiift-myself_Page`}
@@ -45,7 +41,10 @@ const LiiiftMyselfPage = ({
       { duration: 0.4 }
     }
   >
-    <SEO title="Liiift Myself" />
+    <SEO 
+      title="Liiift Myself" 
+      description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift Myself`}
+    />
     <div>
       <LDeviceMain
         lDeviceImage={dataFromCMS.lDeviceImage}
@@ -58,7 +57,6 @@ const LiiiftMyselfPage = ({
       <div
         className={`pageContent__title`}
       >
-        {/* needs CMS content model update for just "title" */}
         {dataFromCMS.title}
       </div>
       <div
@@ -123,6 +121,7 @@ query LiiiftMyselfMainQuery {
           title
           body
           header
+          metaDescription
           lDeviceImage {
             url
             fileName

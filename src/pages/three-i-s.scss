@@ -51,3 +51,73 @@
         }
     }
 }
+
+.threeIsSection_CTA {
+    color: var(--main-color-dark);
+
+    width: 100%;
+
+    padding-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 769px) {
+        padding-left: calc(5vw - 1rem);
+    }
+
+    @media (min-width: 1200px) {
+        padding-left: calc(12vw - 1rem);
+    }
+
+    .ctaDiv__message {
+        color: var(--main-color-dark);
+        font-weight: bold;
+
+        font-size: 32px;
+        line-height: 34px;
+
+        margin-left: 1rem;
+
+        margin-bottom: 1rem;
+
+        @media (min-width: 769px) {
+            font-size: 58px;
+            line-height: 60px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 88px;
+            font-size: 92px;
+
+            margin-bottom: 2rem;
+        }
+    }
+    .ctaDiv__buttonsDiv {
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            display: block;
+            width: 9rem;
+
+            text-align: center;
+            color: var(--main-color-dark);
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+
+            border: solid 1px var(--main-color-dark);
+            padding: .5rem;
+
+            margin: 1rem;
+
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+        a:hover {
+            background-color: var(--main-color-dark);
+            color: #FFFFFF;
+        }
+    }
+}

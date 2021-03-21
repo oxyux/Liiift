@@ -16,8 +16,6 @@ const CaseStudyPage = ({
     mount, transitionStatus, entry, exit
 }) => {
 
-    console.log(caseStudy)
-
     return (
         <motion.div
         className={`case-study-page_Page`}
@@ -37,7 +35,10 @@ const CaseStudyPage = ({
           { duration: 0.4 }
         }
       >
-        <SEO title={caseStudy.lDeviceTitle} />
+        <SEO 
+          title={caseStudy.lDeviceTitle} 
+          description={caseStudy.metaDescription ? caseStudy.metaDescription : ``}
+        />
         <div>
           <LDeviceCaseStudy
             lDeviceImage={caseStudy.lDeviceImage}
@@ -138,6 +139,7 @@ export const pageQuery = graphql`
             id
             header
             slug
+            metaDescription
             lDeviceTitle
             lDeviceImage {
                 url

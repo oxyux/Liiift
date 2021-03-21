@@ -164,6 +164,7 @@
     }
 
     .our-people_Page__clientsSection {
+        position: relative;
 
         display: grid;
         grid-template-columns: 1fr;
@@ -172,6 +173,8 @@
         'videoDiv'
         'caseStudiesSlider'
         ;
+
+        margin-bottom: 2rem;
 
 
         .pageContent__header {
@@ -228,6 +231,10 @@
                 margin-bottom: 2rem;
 
                 padding-left: 5vw;
+
+                @media (min-width: 1200px) {
+                    padding-left: 12vw;
+                }
             }
 
             .our-people_Page__videoDiv {   
@@ -235,27 +242,28 @@
 
                 min-height: 500px;
 
-                padding-left: 5vw;
+                margin-left: 5vw;
                 padding-right: 5vw;
 
                 @media (min-width: 1200px) {
-                    padding-left: 12vw;
+                    margin-left: 12vw;
                 }
                
 
                 .our-people_Page__videoDiv__video {
                     width: 92%;
                    
+
                     iframe {
                         display: block;
-                        width: 90vw;
+                        
                         margin-left: auto;
                         margin-right: auto;
                         height: calc(90vh/1.4);
 
-                        // @media (min-width: 1200px) {
-                        //     width: 80vw;
-                        // }
+                        @media (min-width: 1200px) {
+                            width: 90vw;
+                        }
                     }
 
 
@@ -265,26 +273,19 @@
                     display: block;
 
                     position: absolute;
-                    left: 0;
+                    left: -48px;
                     bottom: 0;
 
 
                     width: 250px;
 
-                    @media (min-width: 1200px) {
+/*                     @media (min-width: 1200px) {
                         left: 9vw;
-                    }
+                    } */
 
                 }
             }
 
-            .caseStudiesSlider {
-                padding-left: 5vw;
-
-                @media (min-width: 1200px) {
-                    padding-left: 8vw;
-                }
-            }
         }
 
 

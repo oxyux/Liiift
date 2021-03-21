@@ -24,4 +24,5 @@ fragment LiiiftMyBusinessMain on LiiiftMyBusinessMain {
       stage
     }
   }
+  metaDescription
 }

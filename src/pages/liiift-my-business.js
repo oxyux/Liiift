@@ -24,8 +24,6 @@ const LiiiftMyBusinessPage = ({
 
   let pages = data.allGraphCmsLiiiftMyBusinessPage.edges
 
-  console.log(transitionStatus)
-
   return (
     <motion.div
     className={`liiift-my-business_Page`}
@@ -45,7 +43,10 @@ const LiiiftMyBusinessPage = ({
       { duration: 0.4 }
     }
   >
-    <SEO title="Liiift My Business" />
+    <SEO 
+      title="Liiift My Business" 
+      description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift My Business`}
+    />
     <div>
       <LDeviceMain
         lDeviceImage={dataFromCMS.lDeviceImage}
@@ -58,7 +59,6 @@ const LiiiftMyBusinessPage = ({
       <div
         className={`pageContent__title`}
       >
-        {/* needs CMS content model update for just "title" */}
         {dataFromCMS.title}
       </div>
       <div
@@ -123,6 +123,7 @@ query LiiiftMyBusinessMainQuery {
           title
           body
           header
+          metaDescription
           lDeviceImage {
             url
             fileName

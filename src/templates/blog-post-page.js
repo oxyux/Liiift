@@ -10,6 +10,9 @@ import Footer from '../components/footer/Footer';
 
 import '../content-general.scss';
 import './blog-post-page.scss';
+import LDeviceVideo from '../components/l-device/lDeviceVideo';
+import RichTextBlock from '../components/blocks/RichTextBlock';
+import ImageGrid from '../components/blocks/ImageGrid';
 
 const BlogPostPage = ({ 
     data: { blogPost },
@@ -35,12 +38,24 @@ const BlogPostPage = ({
           { duration: 0.4 }
         }
       >
-        <SEO title={blogPost.title} />
+        <SEO 
+          title={blogPost.title} 
+          description={blogPost.metaDescription ? blogPost.metaDescription : ``}
+        />
         <div>
-          <LDevicePage
-            lDeviceImage={blogPost.headerImage}
-            lDeviceTitle={blogPost.title}
-          />
+          {
+            blogPost.type !== 'video'
+            ?
+            <LDevicePage
+              lDeviceImage={blogPost.headerImage}
+              lDeviceTitle={blogPost.title}
+            />
+            :
+            <LDeviceVideo 
+              videoURL={blogPost.headerVideoUrl}
+              lDeviceTitle={blogPost.title}
+            />
+          }
         </div>
         <div
           className={`blog-post-page_Page__content`}
@@ -49,7 +64,7 @@ const BlogPostPage = ({
             className={`pageContent__title`}
           >
             {/* needs CMS content model update for just "title" */}
-            {blogPost.lDeviceTitle}
+            {blogPost.title}
           </div>
           <div
             className={`pageContent__header`}
@@ -58,8 +73,36 @@ const BlogPostPage = ({
           </div>
           <div
             className={`pageContent__body`}
-            dangerouslySetInnerHTML={{__html: blogPost.body.html}}
           >
+            {
+              blogPost.blocks && blogPost.blocks.map(block => {
+                if (block.__typename === "GraphCMS_RichTextBlock") {
+                  return (
+                    <RichTextBlock
+                      key={block.id}
+                      html={block.richTextBlock.html}
+                    />
+                  )
+                } else {
+                  return (
+                    <ImageGrid 
+                      key={block.id}
+                      block={block}
+                    />
+                  )
+                }
+              })
+            }
+            <div
+              className="auhtorDateDiv"
+            >
+              <div>
+                {blogPost.author ? `by ${blogPost.author}` : ``}
+              </div>
+              <div>
+                {blogPost.publicationDate ? new Date(blogPost.publicationDate).toLocaleDateString('en-GB') : ''}
+              </div>
+            </div>
           </div>
         </div>
         <Footer />
@@ -70,18 +113,38 @@ const BlogPostPage = ({
 export const pageQuery = graphql`
     query BlogPostPageQuery($id: String!) {
         blogPost: graphCmsBlogPost(id: { eq: $id }) {
+            type
             title
             slug
             id
+            publicationDate
+            headerVideoUrl
+            author
+            metaDescription
             headerImage {
                 url
                 fileName
             }
             previewText
             publicationDate
-            body {
-                html
-            }
+            blocks {
+              ... on GraphCMS_ImageGrid {
+             id
+             rows
+             columns
+             image {
+                 fileName
+                 url
+                 id
+             }
+             }
+              ... on GraphCMS_RichTextBlock {
+             id
+             richTextBlock {
+                     html
+                 }
+             }
+         }
         }
     }
 `;

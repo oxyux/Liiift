@@ -120,7 +120,8 @@ const Topnav = ({
     const { 
         liiiftMyBusinessPages,
         liiiftMyselfPages,
-        caseStudies
+        caseStudies,
+        topNavLinks
     } = useStaticQuery(
         graphql`
         query TopnavQuery {
@@ -141,14 +142,16 @@ const Topnav = ({
                   slug
                   lDeviceTitle
               }
+            }
+            topNavLinks: allGraphCmsTopNavigationLink {
+              nodes {
+                slug
+                text
+              }
           }
         }
         `
     );
-
-    console.log(liiiftMyBusinessPages)
-    console.log(liiiftMyselfPages)
-    console.log(caseStudies)
 
     return (
         <>
@@ -202,22 +205,26 @@ const Topnav = ({
             >
               THE 3 I ’S
             </TransitionLink>
-            <TransitionLink
-              to="/blog/"
-              style={{
-                marginRight: '16px'
-              }}
-              exit={{
-                length: 0.4,
-                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
-              }}
-              entry={{
-                delay: 0.6,
-                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
-              }}
-            >
-              BLOG
-            </TransitionLink>
+            {
+              topNavLinks && topNavLinks.nodes.map(node => (
+                <TransitionLink
+                  to={`/${node.slug}/`}
+                  style={{
+                    marginRight: '16px'
+                  }}
+                  exit={{
+                    length: 0.4,
+                    state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+                  }}
+                  entry={{
+                    delay: 0.6,
+                    state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+                  }}
+                >
+                  {node.text.toUpperCase()}
+                </TransitionLink>
+              ))
+            }
         </nav>
         <nav
             className={`topnavMobile ${isOpen ? 'topnavMobile--open' : 'topnavMobile--closed'}`}
@@ -361,24 +368,29 @@ const Topnav = ({
               >
                 THE 3 I ’S
               </TransitionLink>
-              <TransitionLink
-                to="/blog/"
-                style={{
-                  marginRight: '16px'
-                }}
-                exit={{
-                  length: 0.4,
-                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
-                }}
-                entry={{
-                  delay: 0.6,
-                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
-                }}
-                className="topnavMobile__link"
-                onClick={() => handleCloseTopnav()}
-              >
-                BLOG
-              </TransitionLink>
+              {
+                topNavLinks && topNavLinks.nodes.map(node => (
+                  <TransitionLink
+                    to={`/${node.slug}/`}
+                    style={{
+                      marginRight: '16px'
+                    }}
+                    exit={{
+                      length: 0.4,
+                      state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+                    }}
+                    entry={{
+                      delay: 0.6,
+                      state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+                    }}
+                    className="topnavMobile__link"
+                    onClick={() => handleCloseTopnav()}
+                  >
+                    {node.text.toUpperCase()}
+                  </TransitionLink>
+
+                ))
+              }
             </div>
         </nav>
         </>

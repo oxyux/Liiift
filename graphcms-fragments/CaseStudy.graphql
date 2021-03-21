@@ -5,6 +5,14 @@ fragment CaseStudy on CaseStudy {
   updatedAt
   publishedAt
   slug
+  sliderImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
   lDeviceTitle
   lDeviceImage {
     ... on Asset {
@@ -40,4 +48,5 @@ fragment CaseStudy on CaseStudy {
     }
   }
   bottomQuoteAuthor
+  metaDescription
 }
