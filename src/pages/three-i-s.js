@@ -124,7 +124,7 @@ const ThreeIsPage = ({
           <div
               className="ctaDiv__message"
           >
-              Ready to be Liiifted?
+              Ready to be L<span style={{color: 'var(--main-color-peach)'}}>iii</span>fted?
           </div>
           <div
               className="ctaDiv__buttonsDiv"

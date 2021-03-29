@@ -72,7 +72,7 @@ const IndexPage = ({
             className="homepage__content"
           >
             <h1>
-              Welcome to L<span style={{color: `var(--main-color-peach)`}}>iii</span>ft. Welcome to a consultancy that delivers benefits to companies and people; in a real world way – no theorising; purely pragmatism.
+              Welcome to L<span style={{color: `var(--main-color-peach)`}}>iii</span>ft. Welcome to an organisation that delivers benefits to companies and people; in a real world way – no theorising; purely pragmatism.
             </h1>
             <p>
               {dataFromCMS.paragraph2}

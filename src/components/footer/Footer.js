@@ -49,7 +49,7 @@ const Footer = ({
                     <div
                         className="ctaDiv__message"
                     >
-                        Ready to be Liiifted?
+                        Ready to be L<span style={{color: '#FFFFFF'}}>iii</span>fted?
                     </div>
                     <div
                         className="ctaDiv__buttonsDiv"
