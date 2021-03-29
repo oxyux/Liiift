@@ -184,11 +184,22 @@ const Topnav = ({
               mainLinkText="LIIIFT MYSELF"
               links={liiiftMyselfPages.nodes}
             />
-            <TopnavDesktopLinkWithDropdown
-              mainLinkURL="/our-people/"
-              mainLinkText="OUR PEOPLE"
-              links={caseStudies.nodes}
-            />
+            <TransitionLink
+              to="/our-people/"
+              style={{
+                marginRight: '16px'
+              }}
+              exit={{
+                length: 0.4,
+                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+              }}
+              entry={{
+                delay: 0.6,
+                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+              }}
+            >
+              OUR PEOPLE
+            </TransitionLink>
             <TransitionLink
               to="/three-i-s/"
               style={{

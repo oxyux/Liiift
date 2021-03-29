@@ -84,38 +84,47 @@ const IndexPage = ({
               <h4>
                 {dataFromCMS.linksHeading}
               </h4>
-              <TransitionLink
-                to="/liiift-my-business/"
+              <div
+                className="linkWrapper"
                 style={{
                   marginRight: '16px'
                 }}
-                exit={{
-                  length: 0.8,
-                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
-                }}
-                entry={{
-                  delay: 0.6,
-                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
-                }}
               >
-                {dataFromCMS.liiiftMyBusiness}
-              </TransitionLink>
-              <TransitionLink
-                to="/liiift-myself/"
-                style={{
-                  marginRight: '16px'
-                }}
-                exit={{
-                  length: 0.8,
-                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
-                }}
-                entry={{
-                  delay: 0.6,
-                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
-                }}
+                <TransitionLink
+                  to="/liiift-my-business/"
+                  exit={{
+                    length: 0.8,
+                    state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+                  }}
+                  entry={{
+                    delay: 0.6,
+                    state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+                  }}
+                >
+                  L<span style={{color: 'var(--main-color-peach)'}}>iii</span>ft my business
+                </TransitionLink>
+              </div>
+              <div
+                className="linkWrapper"
+
               >
-                {dataFromCMS.liiiftMyself}
-              </TransitionLink>
+                <TransitionLink
+                  to="/liiift-myself/"
+                  style={{
+                    marginRight: '16px'
+                  }}
+                  exit={{
+                    length: 0.8,
+                    state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+                  }}
+                  entry={{
+                    delay: 0.6,
+                    state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+                  }}
+                >
+                  L<span style={{color: 'var(--main-color-peach)'}}>iii</span>ft myself
+                </TransitionLink>
+              </div>
             </div>
           </div>
         </div>

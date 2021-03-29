@@ -94,7 +94,7 @@ const BlogPostPage = ({
               })
             }
             <div
-              className="auhtorDateDiv"
+              className="authorDateDiv"
             >
               <div>
                 {blogPost.author ? `by ${blogPost.author}` : ``}

@@ -95,7 +95,7 @@ const CustomPage = ({
               })
             }
             <div
-              className="auhtorDateDiv"
+              className="authorDateDiv"
             >
               <div>
                 {customPage.author ? `by ${customPage.author}` : ``}

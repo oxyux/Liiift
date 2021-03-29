@@ -25,6 +25,9 @@
         }
         .liiift-myself_Page__linksDiv {
             grid-area: links;
+
+            margin-bottom: 10vh;
+
             a {
                 position: relative;
                 display: block;
@@ -74,6 +77,9 @@
         }
         .liiift-myself_Page__imgDiv {
             grid-area: img;
+
+            margin-left: auto;
+            margin-right: auto;
         }
 
 
@@ -105,6 +111,11 @@
             }
             .liiift-myself_Page__imgDiv {
                 position: relative;
+
+                margin-left: initial;
+                margin-right: initial;
+
+                margin-bottom: 60vh;
 
                 img {
                     position: absolute;

@@ -17,4 +17,5 @@ fragment Three_is on Three_is {
   para2
   para3
   metaDescription
+  lDeviceVideoUrl
 }

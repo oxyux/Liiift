@@ -4,6 +4,7 @@
     width: 100%;
 
     background: no-repeat center right fixed;
+    background-size: cover;
     background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../images/main_page.jpg");
 
     .logoDiv {
@@ -52,7 +53,7 @@
                 max-width: 610px;
             }
             @media (min-width: 1200px) {
-                font-size: 54px;
+                font-size: 44px;
                 max-width: 910px;
             }
         }
@@ -65,7 +66,7 @@
                 max-width: 660px;
             }
             @media (min-width: 1200px) {
-                font-size: 34px;
+                font-size: 30px;
                 line-height: 36px;
                 max-width: 910px;
             }
@@ -81,6 +82,17 @@
 
                 font-weight: 500;
                 color: var(--main-color-peach);
+            }
+
+            .linkWrapper {
+                padding: .6rem;
+                padding-top: 1rem;
+
+                border: 2px solid #FFFFFF;
+
+
+                margin-bottom: .5rem;
+
             }
 
             a {

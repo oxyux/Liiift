@@ -8,6 +8,7 @@ import LDevicePage from "../components/l-device/lDevicePage"
 import Footer from '../components/footer/Footer';
 
 import './three-i-s.scss';
+import LDeviceVideo from '../components/l-device/lDeviceVideo';
 
 const ThreeIsPage = ({
   data,
@@ -41,11 +42,21 @@ const ThreeIsPage = ({
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Three i's of Liiift`}
     />
       <div>
-        <LDevicePage
-          lDeviceImage={dataFromCMS.lDeviceImage}
-          lDeviceTitle={dataFromCMS.lDeviceTitle}
-          lColor={`#00384A`}
-        />
+        {
+          dataFromCMS.lDeviceVideoUrl
+          ?
+          <LDeviceVideo
+            videoURL={dataFromCMS.lDeviceVideoUrl}
+            lDeviceTitle={dataFromCMS.lDeviceTitle}
+            lColor={`#00384A`}
+          />
+          :
+          <LDevicePage
+            lDeviceImage={dataFromCMS.lDeviceImage}
+            lDeviceTitle={dataFromCMS.lDeviceTitle}
+            lColor={`#00384A`}
+          />
+        }
         <section
           className={`threeIsSection`}
           style={{
@@ -160,6 +171,7 @@ query ThreeIsQuery {
             fileName
           }
           lDeviceTitle
+          lDeviceVideoUrl
         }
       }
     }

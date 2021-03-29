@@ -1,7 +1,9 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Liiift`,
-    description: `Liiift your business`,
+    description: `Consultancy agency based in Liverpool`,
     author: `Liift`,
     siteUrl: `https://liiift.co.uk/`,
   },
@@ -27,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-source-graphcms',
         options: {
           // Your GraphCMS API endpoint. Available from your project settings.
-          endpoint: "https://api-eu-central-1.graphcms.com/v2/cklik2c2c8qjy01z6a5kj6tx4/master"
+          endpoint: process.env.GRAPHCMS_URL
           // A PAT (Permanent Auth Token) for your project. Required if your project is not available publicly, or you want to scope access to a specific content stage (i.e. draft content).
           //token: process.env.GRAPHCMS_TOKEN
         },
@@ -35,10 +37,31 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          process.env.GA_TRACKING_ID],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Liiift Consultancy agency based in Liverpool`,
+        short_name: `Liiift`,
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#FFFFFF`,
