@@ -15,8 +15,11 @@
     }
 
     h2 {
-        font-size: 84px;
+        font-size: 64px;
 
+        @media (min-width: 640px) {
+            font-size: 96px;
+        }
         @media (min-width: 640px) {
             font-size: 96px;
         }
