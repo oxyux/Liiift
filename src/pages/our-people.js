@@ -86,10 +86,16 @@ const OurPeoplePage = ({
           gridArea: 'expert_1'
         }}
       >
-        <img
-          src={dataFromCMS.expert1Image.url}
-          alt={dataFromCMS.expert1Image.filename}
-        />
+        {
+          dataFromCMS.expert1Image
+          ?
+          <img
+            src={dataFromCMS.expert1Image.url}
+            alt={dataFromCMS.expert1Image.filename}
+          />
+          :
+          null
+        }
         <h4>
           {dataFromCMS.expert1Title}
         </h4>
@@ -103,10 +109,16 @@ const OurPeoplePage = ({
           gridArea: 'expert_2'
         }}
       >
-        <img
-          src={dataFromCMS.expert2Image.url}
-          alt={dataFromCMS.expert2Image.filename}
-        />
+        {
+          dataFromCMS.expert2Image
+          ?
+          <img
+            src={dataFromCMS.expert2Image.url}
+            alt={dataFromCMS.expert2Image.filename}
+          />
+          :
+          null
+        }
         <h4>
           {dataFromCMS.expert2Title}
         </h4>
@@ -114,104 +126,121 @@ const OurPeoplePage = ({
           {dataFromCMS.expert2Body}
         </p>
       </div>
-      <div
-        className={`our-people_Page__videoDiv`}
-      >
+      {
+        dataFromCMS.expertsVideoUrl
+        ?
         <div
-          className={`our-people_Page__videoDiv__video`}
+          className={`our-people_Page__videoDiv`}
         >
-          <iframe 
-            width="560" height="315" 
-            src={dataFromCMS.expertsVideoUrl}
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen
+          <div
+            className={`our-people_Page__videoDiv__video`}
           >
-          </iframe>
-        </div>
-        <svg 
-            className={`our-people_Page__videoDiv__svg`}
-            version="1.1" 
-            viewBox="0 0 640 565.35" 
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <motion.path 
-                className={`our-people_Page__videoDiv__L_Path`}
-                clipPath="url(#our-people_Page__videoDiv__L_clipPath)"
-                d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
-                stroke="#00384A"
-                strokeWidth="190.5"
-                strokeLinecap="butt"
-                strokeLinejoin="round"
-                strokeMiterlimit="4"
-                fill="none"
-                initial={{ pathLength: 0, pathOffset: 1 }}
-                animate={{ pathLength: 1, pathOffset: 0 }}
-                transition={{ duration: 1.5 }}
-            />
-            <clipPath
-                id="our-people_Page__videoDiv__L_clipPath"
+            <iframe 
+              width="560" height="315" 
+              src={dataFromCMS.expertsVideoUrl}
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
             >
-                <path 
-                    d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
-                />
-            </clipPath>
-        </svg>
-      </div>
+            </iframe>
+          </div>
+          <svg 
+              className={`our-people_Page__videoDiv__svg`}
+              version="1.1" 
+              viewBox="0 0 640 565.35" 
+              xmlns="http://www.w3.org/2000/svg"
+          >
+              <motion.path 
+                  className={`our-people_Page__videoDiv__L_Path`}
+                  clipPath="url(#our-people_Page__videoDiv__L_clipPath)"
+                  d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
+                  stroke="#00384A"
+                  strokeWidth="190.5"
+                  strokeLinecap="butt"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="4"
+                  fill="none"
+                  initial={{ pathLength: 0, pathOffset: 1 }}
+                  animate={{ pathLength: 1, pathOffset: 0 }}
+                  transition={{ duration: 1.5 }}
+              />
+              <clipPath
+                  id="our-people_Page__videoDiv__L_clipPath"
+              >
+                  <path 
+                      d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
+                  />
+              </clipPath>
+          </svg>
+        </div>
+        :
+        null
+      }
     </div>
-    <div
-      className={`our-people_Page__clientsSection`}
-    >
-      <h1
-        className={`pageContent__header`}
-      >
-        {dataFromCMS.headerClients}
-      </h1>
+    {
+      dataFromCMS.clientsVideoUrl
+      ?
       <div
-        className={`our-people_Page__videoDiv`}
+        className={`our-people_Page__clientsSection`}
       >
+        <h1
+          className={`pageContent__header`}
+        >
+          {dataFromCMS.headerClients}
+        </h1>
         <div
-          className={`our-people_Page__videoDiv__video`}
+          className={`our-people_Page__videoDiv`}
         >
-          <iframe 
-            width="560" height="315" 
-            src={dataFromCMS.clientsVideoUrl}
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen
+          <div
+            className={`our-people_Page__videoDiv__video`}
           >
-          </iframe>
-        </div>
-        <svg 
-            className={`our-people_Page__videoDiv__svg`}
-            version="1.1" 
-            viewBox="0 0 640 565.35" 
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <motion.path 
-                className={`our-people_Page__videoDiv__L_Path`}
-                clipPath="url(#our-people_Page__videoDiv__L_clipPath)"
-                d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
-                stroke="#ffa6ab"
-                strokeWidth="190.5"
-                strokeLinecap="butt"
-                strokeLinejoin="round"
-                strokeMiterlimit="4"
-                fill="none"
-                initial={{ pathLength: 0, pathOffset: 1 }}
-                animate={{ pathLength: 1, pathOffset: 0 }}
-                transition={{ duration: 1.5 }}
-            />
-            <clipPath
-                id="our-people_Page__videoDiv__L_clipPath"
+            <iframe 
+              width="560" height="315" 
+              src={dataFromCMS.clientsVideoUrl}
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
             >
-                <path 
-                    d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
-                />
-            </clipPath>
-        </svg>
+            </iframe>
+          </div>
+          <svg 
+              className={`our-people_Page__videoDiv__svg`}
+              version="1.1" 
+              viewBox="0 0 640 565.35" 
+              xmlns="http://www.w3.org/2000/svg"
+          >
+              <motion.path 
+                  className={`our-people_Page__videoDiv__L_Path`}
+                  clipPath="url(#our-people_Page__videoDiv__L_clipPath)"
+                  d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
+                  stroke="#ffa6ab"
+                  strokeWidth="190.5"
+                  strokeLinecap="butt"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="4"
+                  fill="none"
+                  initial={{ pathLength: 0, pathOffset: 1 }}
+                  animate={{ pathLength: 1, pathOffset: 0 }}
+                  transition={{ duration: 1.5 }}
+              />
+              <clipPath
+                  id="our-people_Page__videoDiv__L_clipPath"
+              >
+                  <path 
+                      d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
+                  />
+              </clipPath>
+          </svg>
+        </div>
       </div>
-    </div>
+      :
+      <div
+        style={{
+          height: '10vh',
+          width: '100%'
+        }}
+      />
+    }
     <CaseStudiesSlider
       caseStudies={caseStudies}
     />
