@@ -266,7 +266,7 @@ query OurPeopleQuery {
           id
           header
           slug
-          lDeviceTitle
+          title
           lDeviceImage {
             url
             fileName

@@ -35,7 +35,7 @@ const CaseStudy = ({
                     CASE STUDY
                 </h6>
                 <h2>
-                    {caseStudy.lDeviceTitle}
+                    {caseStudy.title}
                 </h2>
             </TransitionLink>  
         </div>

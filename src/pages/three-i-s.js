@@ -42,21 +42,11 @@ const ThreeIsPage = ({
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Three i's of Liiift`}
     />
       <div>
-        {
-          dataFromCMS.lDeviceVideoUrl
-          ?
-          <LDeviceVideo
-            videoURL={dataFromCMS.lDeviceVideoUrl}
-            lDeviceTitle={dataFromCMS.lDeviceTitle}
-            lColor={`#00384A`}
-          />
-          :
-          <LDevicePage
-            lDeviceImage={dataFromCMS.lDeviceImage}
-            lDeviceTitle={dataFromCMS.lDeviceTitle}
-            lColor={`#00384A`}
-          />
-        }
+        <LDevicePage
+          lDeviceImage={dataFromCMS.lDeviceImage}
+          lDeviceTitle={dataFromCMS.lDeviceTitle}
+          lColor={`#00384A`}
+        />
         <section
           className={`threeIsSection`}
           style={{
@@ -115,6 +105,58 @@ const ThreeIsPage = ({
             {dataFromCMS.para3}
           </p>
         </section>
+        {
+        dataFromCMS.lDeviceVideoUrl
+        ?
+        <section>
+          <div
+            className={`threeIs__videoDiv`}
+          >
+            <div
+              className={`threeIs__videoDiv__video`}
+            >
+              <iframe 
+                width="560" height="315" 
+                src={dataFromCMS.lDeviceVideoUrl}
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              >
+              </iframe>
+            </div>
+            <svg 
+                className={`threeIs__videoDiv__svg`}
+                version="1.1" 
+                viewBox="0 0 640 565.35" 
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <motion.path 
+                    className={`threeIs__videoDiv__L_Path`}
+                    clipPath="url(#threeIs__videoDiv__L_clipPath)"
+                    d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
+                    stroke="#00384A"
+                    strokeWidth="190.5"
+                    strokeLinecap="butt"
+                    strokeLinejoin="round"
+                    strokeMiterlimit="4"
+                    fill="none"
+                    initial={{ pathLength: 0, pathOffset: 1 }}
+                    animate={{ pathLength: 1, pathOffset: 0 }}
+                    transition={{ duration: 1.5 }}
+                />
+                <clipPath
+                    id="threeIs__videoDiv__L_clipPath"
+                >
+                    <path 
+                        d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
+                    />
+                </clipPath>
+            </svg>
+          </div>
+        </section>
+        :
+        null
+        }
         <section
           className={`threeIsSection threeIsSection_CTA`}
           style={{

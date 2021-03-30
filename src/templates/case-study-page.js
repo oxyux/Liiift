@@ -36,7 +36,7 @@ const CaseStudyPage = ({
         }
       >
         <SEO 
-          title={caseStudy.lDeviceTitle} 
+          title={caseStudy.title} 
           description={caseStudy.metaDescription ? caseStudy.metaDescription : ``}
         />
         <div>
@@ -52,7 +52,7 @@ const CaseStudyPage = ({
             className={`pageContent__title`}
           >
             {/* needs CMS content model update for just "title" */}
-            {caseStudy.lDeviceTitle}
+            {caseStudy.title}
           </div>
           <div
             className={`pageContent__header`}
@@ -64,66 +64,70 @@ const CaseStudyPage = ({
             dangerouslySetInnerHTML={{__html: caseStudy.body.html}}
           >
           </div>
-          {
-            caseStudy.bottomImage
-            ?
-            <div
-                className={`case-study-page__bottomImg`}
-            >
-                <img 
-                    src={caseStudy.bottomImage.url}
-                />
-            </div>
-            :
-            null
-          }
-          {
-            caseStudy.bottomQuoteBody
-            ?
-            <div
-                className={`case-study-page__bottomQuote`}
-            >
-                <div
-                    className={`case-study-page__bottomQuote__quote`}
-                    dangerouslySetInnerHTML={{__html: caseStudy.bottomQuoteBody.html}}
-                />
-                <div 
-                    className={`case-study-page__bottomQuote__author`}
-                >
-                    {caseStudy.bottomQuoteAuthor}
-                </div>
-                <svg 
-                    className={`case-study-page__bottomQuote_svg`}
-                    version="1.1" 
-                    viewBox="0 0 640 565.35" 
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <motion.path 
-                        className={`case-study-page__bottomQuote__L_Path`}
-                        clipPath="url(#case-study-page__bottomQuote__L_clipPath)"
-                        d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
-                        stroke="#ffa6ab"
-                        strokeWidth="190.5"
-                        strokeLinecap="butt"
-                        strokeLinejoin="round"
-                        strokeMiterlimit="4"
-                        fill="none"
-                        initial={{ pathLength: 0, pathOffset: 1 }}
-                        animate={{ pathLength: 1, pathOffset: 0 }}
-                        transition={{ duration: 1.5 }}
-                    />
-                    <clipPath
-                        id="case-study-page__bottomQuote__L_clipPath"
-                    >
-                        <path 
-                            d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
-                        />
-                    </clipPath>
-                </svg>
-            </div>
-            :
-            null
-          }
+          <div
+            className="imgQuoteWrapper"
+          >
+            {
+              caseStudy.bottomImage
+              ?
+              <div
+                  className={`case-study-page__bottomImg`}
+              >
+                  <img 
+                      src={caseStudy.bottomImage.url}
+                  />
+              </div>
+              :
+              null
+            }
+            {
+              caseStudy.bottomQuoteBody
+              ?
+              <div
+                  className={`case-study-page__bottomQuote`}
+              >
+                  <div
+                      className={`case-study-page__bottomQuote__quote`}
+                      dangerouslySetInnerHTML={{__html: caseStudy.bottomQuoteBody.html}}
+                  />
+                  <div 
+                      className={`case-study-page__bottomQuote__author`}
+                  >
+                      {caseStudy.bottomQuoteAuthor}
+                  </div>
+                  <svg 
+                      className={`case-study-page__bottomQuote_svg`}
+                      version="1.1" 
+                      viewBox="0 0 640 565.35" 
+                      xmlns="http://www.w3.org/2000/svg"
+                  >
+                      <motion.path 
+                          className={`case-study-page__bottomQuote__L_Path`}
+                          clipPath="url(#case-study-page__bottomQuote__L_clipPath)"
+                          d="m650.32 534.32c-694.4-2.5857-645.15 96.734-612.83-509.4" 
+                          stroke="#ffa6ab"
+                          strokeWidth="190.5"
+                          strokeLinecap="butt"
+                          strokeLinejoin="round"
+                          strokeMiterlimit="4"
+                          fill="none"
+                          initial={{ pathLength: 0, pathOffset: 1 }}
+                          animate={{ pathLength: 1, pathOffset: 0 }}
+                          transition={{ duration: 1.5 }}
+                      />
+                      <clipPath
+                          id="case-study-page__bottomQuote__L_clipPath"
+                      >
+                          <path 
+                              d="m5.0455 41.04v524.31h639.57v-96.8h-533.1v-427.51z"
+                          />
+                      </clipPath>
+                  </svg>
+              </div>
+              :
+              null
+            }
+          </div>
         </div>
         <Footer />
       </motion.div>
@@ -140,6 +144,7 @@ export const pageQuery = graphql`
             header
             slug
             metaDescription
+            title
             lDeviceTitle
             lDeviceImage {
                 url

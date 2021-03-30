@@ -69,6 +69,14 @@ module.exports = {
         icon: `src/images/l-favicon.svg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://liiift.co.uk',
+        sitemap: 'https://liiift.co.uk/sitemap.xml',
+        policy: [{ userAgent: '*' }]
+      }
+    },
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: "gatsby-plugin-transition-link",

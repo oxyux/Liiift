@@ -64,7 +64,7 @@ const TopnavDesktopLinkWithDropdown = ({
                   state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                 }}
               >
-                {link.lDeviceTitle}
+                {link.title}
               </TransitionLink>
             ))
           }
@@ -104,7 +104,7 @@ const TopnavMobileSublinksSection = ({
             }}
             onClick={() => handleCloseTopnav()}
           >
-            {link.lDeviceTitle}
+            {link.title}
           </TransitionLink>
         ))
       }
@@ -128,13 +128,13 @@ const Topnav = ({
             liiiftMyBusinessPages: allGraphCmsLiiiftMyBusinessPage {
                 nodes {
                     slug
-                    lDeviceTitle
+                    title
                 }
             }
             liiiftMyselfPages: allGraphCmsLiiiftMyselfPage {
                 nodes {
                     slug
-                    lDeviceTitle
+                    title
                 }
             }
             caseStudies: allGraphCmsCaseStudy {

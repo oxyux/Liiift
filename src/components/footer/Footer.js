@@ -4,6 +4,47 @@ import { graphql, useStaticQuery } from 'gatsby';
 import './footer.scss'
 import { TransitionLink } from 'gatsby-plugin-transition-link/components/TransitionLink';
 
+import { useForm, ValidationError } from '@formspree/react';
+
+const ContactForm = () => {
+    const [state, handleSubmit] = useForm("meqvjwbl");
+    if (state.succeeded) {
+        return (
+            <div
+                className="successDiv"
+            >
+                Thank you!
+            </div>
+        );
+    }
+    return (
+        <form 
+            onSubmit={handleSubmit}
+            className="contactForm"
+        >
+          <input
+            id="email"
+            type="email" 
+            name="email"
+            placeholder="Email address"
+            className="contactForm_emailInput" 
+          />
+          <ValidationError 
+            prefix="Email" 
+            field="email"
+            errors={state.errors}
+          />
+          <button 
+            className="contactForm_submitInput"
+            type="submit" 
+            disabled={state.submitting}
+          >
+            Submit
+          </button>
+        </form>
+    );
+  }
+
 const Footer = ({
     customCtaDiv
 }) => {
@@ -138,34 +179,7 @@ const Footer = ({
                 <div
                     className="navDiv__subscribeDiv"
                 >
-                    <div id="mc_embed_signup" >
-                        <form  
-                            action="https://wearemagma.us1.list-manage.com/subscribe/post?u=ad5822ab3cbf6ed56f3009e21&amp;id=ed72e151ed" 
-                            method="post" 
-                            id="mc-embedded-subscribe-form" 
-                            name="mc-embedded-subscribe-form" 
-                            target="_blank" 
-                            className="contactForm"
-                            noValidate
-                        >
-                            <div id="mc_embed_signup_scroll" className="contactForm">
-                            <input 
-                                type="email" 
-                                value="" 
-                                name="EMAIL" 
-                                className="contactForm_emailInput" 
-                                id="mce-EMAIL" 
-                                placeholder="Email address" 
-                                required 
-                            />
-                            {/* honeypot */}
-                            <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true"><input type="text" name="b_ad5822ab3cbf6ed56f3009e21_ed72e151ed" tabIndex="-1" value="" /></div>
-                            <div className="clear">
-                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="contactForm_submitInput"/>
-                            </div>
-                            </div>
-                        </form>
-                    </div>
+                    <ContactForm />
                 </div>
             </div>
             <div

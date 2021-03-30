@@ -78,9 +78,10 @@ const LDeviceCaseStudy = ({
                         style={{
                             color: 'var(--main-color-dark)'
                         }}
-                    >
-                        {lDeviceTitle}
-                    </div>
+                        dangerouslySetInnerHTML={{
+                            __html: lDeviceTitle
+                        }}
+                    />
                 </motion.div>
             </div>
         </div>

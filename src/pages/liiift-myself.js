@@ -49,7 +49,7 @@ const LiiiftMyselfPage = ({
       <LDevicePage
         lDeviceImage={dataFromCMS.lDeviceImage}
         lDeviceTitle={
-          <span>
+          `<span>
             <svg version="1.1" viewBox="0 0 1300 565.35" xmlns="http://www.w3.org/2000/svg">
  <g data-name="Layer 2">
   <g data-name="Layer 1">
@@ -70,8 +70,9 @@ const LiiiftMyselfPage = ({
   </g>
  </g>
 </svg>
+<br/>
  myself
-          </span>
+          </span>`
         }
         lColor={`#00384A`}
         lTitleColor={`#00384A`}
@@ -116,7 +117,7 @@ const LiiiftMyselfPage = ({
                 state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
               }}
             >
-              {edge.node.lDeviceTitle}
+              {edge.node.title}
             </TransitionLink>       
           </div>
         ))}
@@ -165,6 +166,7 @@ query LiiiftMyselfMainQuery {
         node {
           slug
           lDeviceTitle
+          title
         }
       }
     }

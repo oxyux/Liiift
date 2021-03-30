@@ -13,7 +13,6 @@ fragment CaseStudy on CaseStudy {
       stage
     }
   }
-  lDeviceTitle
   lDeviceImage {
     ... on Asset {
       remoteTypeName: __typename
@@ -22,6 +21,8 @@ fragment CaseStudy on CaseStudy {
       stage
     }
   }
+  lDeviceTitle
+  title
   header
   body {
     ... on RichText {

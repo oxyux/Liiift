@@ -37,7 +37,7 @@ const LiiiftMyBusinessSeparatePage = ({
         }
       >
         <SEO 
-          title={pageData.lDeviceTitle} 
+          title={pageData.title} 
           description={pageData.metaDescription ? pageData.metaDescription : ``}
         />
         <div>
@@ -57,9 +57,10 @@ const LiiiftMyBusinessSeparatePage = ({
           </div>
           <div
             className={`pageContent__header`}
-          >
-            {pageData.header}
-          </div>
+            dangerouslySetInnerHTML={{
+              __html: pageData.header
+            }}          
+          />
           <div
             className={`pageContent__body`}
           >

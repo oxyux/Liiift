@@ -51,7 +51,7 @@ const LiiiftMyBusinessPage = ({
       <LDevicePage
         lDeviceImage={dataFromCMS.lDeviceImage}
         lDeviceTitle={
-          <span>
+          `<span>
             <svg version="1.1" viewBox="0 0 1300 565.35" xmlns="http://www.w3.org/2000/svg">
  <g data-name="Layer 2">
   <g data-name="Layer 1">
@@ -72,8 +72,8 @@ const LiiiftMyBusinessPage = ({
   </g>
  </g>
 </svg>
- my business
-          </span>
+ my <br/> business
+          </span>`
         }
         lColor={`#00384A`}
         lTitleColor={`#00384A`}
@@ -118,7 +118,7 @@ const LiiiftMyBusinessPage = ({
                 state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
               }}
             >
-              {edge.node.lDeviceTitle}
+              {edge.node.title}
             </TransitionLink>       
           </div>
         ))}
@@ -167,6 +167,7 @@ query LiiiftMyBusinessMainQuery {
         node {
           slug
           lDeviceTitle
+          title
         }
       }
     }

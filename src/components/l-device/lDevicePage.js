@@ -69,8 +69,10 @@ const LDevicePage = ({
                     style={{
                         color: lTitleColor ? lTitleColor : 'var(--main-color-peach)'
                     }}
+                    dangerouslySetInnerHTML={{
+                        __html: lDeviceTitle
+                    }}
                 >
-                    {lDeviceTitle}
                 </motion.div>
             </div>
         </div>

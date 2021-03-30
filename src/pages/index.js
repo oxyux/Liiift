@@ -84,12 +84,6 @@ const IndexPage = ({
               <h4>
                 {dataFromCMS.linksHeading}
               </h4>
-              <div
-                className="linkWrapper"
-                style={{
-                  marginRight: '16px'
-                }}
-              >
                 <TransitionLink
                   to="/liiift-my-business/"
                   exit={{
@@ -100,14 +94,12 @@ const IndexPage = ({
                     delay: 0.6,
                     state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
                   }}
+                  style={{
+                    marginRight: '16px'
+                  }}
                 >
                   L<span style={{color: 'var(--main-color-peach)'}}>iii</span>ft my business
                 </TransitionLink>
-              </div>
-              <div
-                className="linkWrapper"
-
-              >
                 <TransitionLink
                   to="/liiift-myself/"
                   style={{
@@ -124,7 +116,6 @@ const IndexPage = ({
                 >
                   L<span style={{color: 'var(--main-color-peach)'}}>iii</span>ft myself
                 </TransitionLink>
-              </div>
             </div>
           </div>
         </div>

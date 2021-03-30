@@ -148,6 +148,14 @@
         .navDiv__subscribeDiv {
             grid-area: subscribe;
 
+            .successDiv {
+                text-align: center;
+                @media (min-width: 769px) {
+                    text-align: right;
+                    padding-right: 30%;
+                }
+            }
+
             .contactForm {
                 width: 100%;
                 display: flex;
