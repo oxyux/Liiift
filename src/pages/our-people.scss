@@ -124,7 +124,12 @@
             }
 
             .our-people_Page__expertDiv {
-                margin-right: 48px;            
+                margin-right: 48px;
+
+                img {
+                    height: 350px;
+                    object-fit: cover;
+                }
             }
 
             .our-people_Page__videoDiv {   
