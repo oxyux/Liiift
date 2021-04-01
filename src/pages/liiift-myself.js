@@ -82,15 +82,11 @@ const LiiiftMyselfPage = ({
       className={`liiift-myself_Page__content`}
     >
       <div
-        className={`pageContent__title`}
-      >
-        {dataFromCMS.title}
-      </div>
-      <div
         className={`pageContent__header`}
-      >
-        {dataFromCMS.header}
-      </div>
+        dangerouslySetInnerHTML={{
+          __html: dataFromCMS.header
+        }}          
+      />
       <div
         className={`pageContent__body`}
       >

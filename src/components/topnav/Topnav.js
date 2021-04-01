@@ -174,16 +174,38 @@ const Topnav = ({
             >
               HOME
             </TransitionLink>
-            <TopnavDesktopLinkWithDropdown
-              mainLinkURL="/liiift-my-business/"
-              mainLinkText="LIIIFT MY BUSINESS"
-              links={liiiftMyBusinessPages.nodes}
-            />
-            <TopnavDesktopLinkWithDropdown
-              mainLinkURL="/liiift-myself/"
-              mainLinkText="LIIIFT MYSELF"
-              links={liiiftMyselfPages.nodes}
-            />
+            <TransitionLink
+              to="/liiift-my-business/"
+              style={{
+                marginRight: '16px'
+              }}
+              exit={{
+                length: 0.4,
+                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+              }}
+              entry={{
+                delay: 0.6,
+                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+              }}
+            >
+              LIIIFT MY BUSINESS
+            </TransitionLink>
+            <TransitionLink
+              to="/liiift-myself/"
+              style={{
+                marginRight: '16px'
+              }}
+              exit={{
+                length: 0.4,
+                state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+              }}
+              entry={{
+                delay: 0.6,
+                state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+              }}
+            >
+              LIIIFT MYSELF
+            </TransitionLink>
             <TransitionLink
               to="/our-people/"
               style={{
@@ -303,17 +325,6 @@ const Topnav = ({
               >
                 LIIIFT MY BUSINESS
               </TransitionLink>
-              {
-                liiiftMyBusinessPages && liiiftMyBusinessPages.nodes.length > 0 
-                ?
-                <TopnavMobileSublinksSection 
-                  mainLinkURL="/liiift-my-business/"
-                  links={liiiftMyBusinessPages.nodes}
-                  handleCloseTopnav={handleCloseTopnav}
-                />
-                :
-                null
-              }
               <TransitionLink
                 to="/liiift-myself/"
                 style={{
@@ -331,18 +342,7 @@ const Topnav = ({
                 onClick={() => handleCloseTopnav()}
               >
                 LIIIFT MYSELF
-              </TransitionLink>        
-              {
-                liiiftMyselfPages && liiiftMyselfPages.nodes.length > 0 
-                ?
-                <TopnavMobileSublinksSection 
-                  mainLinkURL="/liiift-myself/"
-                  links={liiiftMyselfPages.nodes}
-                  handleCloseTopnav={handleCloseTopnav}
-                />
-                :
-                null
-              }      
+              </TransitionLink>
               <TransitionLink
                 to="/our-people/"
                 style={{

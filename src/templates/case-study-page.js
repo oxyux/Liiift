@@ -49,12 +49,6 @@ const CaseStudyPage = ({
           className={`case-study-page_Page__content`}
         >
           <div
-            className={`pageContent__title`}
-          >
-            {/* needs CMS content model update for just "title" */}
-            {caseStudy.title}
-          </div>
-          <div
             className={`pageContent__header`}
           >
             {caseStudy.header}

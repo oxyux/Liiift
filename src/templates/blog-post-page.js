@@ -61,12 +61,6 @@ const BlogPostPage = ({
           className={`blog-post-page_Page__content`}
         >
           <div
-            className={`pageContent__title`}
-          >
-            {/* needs CMS content model update for just "title" */}
-            {blogPost.title}
-          </div>
-          <div
             className={`pageContent__header`}
           >
             {blogPost.header}

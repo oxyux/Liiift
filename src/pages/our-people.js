@@ -56,12 +56,6 @@ const OurPeoplePage = ({
       className={`our-people_Page__content`}
     >
       <div
-        className={`pageContent__title`}
-      >
-        {/* needs CMS content model update for just "title" */}
-        {dataFromCMS.lDeviceTitle}
-      </div>
-      <div
         className={`pageContent__header`}
       >
         {dataFromCMS.headerMain}

@@ -50,12 +50,6 @@ const LiiiftMyBusinessSeparatePage = ({
           className={`liiift-my-business-page_Page__content`}
         >
           <div
-            className={`pageContent__title`}
-          >
-            {/* needs CMS content model update for just "title" */}
-            {pageData.title}
-          </div>
-          <div
             className={`pageContent__header`}
             dangerouslySetInnerHTML={{
               __html: pageData.header

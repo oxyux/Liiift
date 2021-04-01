@@ -14,7 +14,7 @@
 
     }
 
-    .scrollForwardArrow {
+    .scrollBackArrow {
         position: absolute;
         top: 200px;
 
@@ -53,6 +53,46 @@
         }
     }
 
+    .scrollForwardArrow {
+        position: absolute;
+        top: 200px;
+
+        height: 3rem;
+        width: 3rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: transparent;
+        border: transparent;
+
+        cursor: pointer;
+
+        svg {
+            display: block;
+            height: 100%;
+        }
+
+        @media (min-width: 769px) {
+            top: 400px;
+        }
+
+        right: 18px;
+
+        @media (min-width: 769px) {
+            right: initial;
+            left: calc(5vw + 56px);
+        }
+        @media (min-width: 1200px) {
+            right: initial;
+            left: calc(12vw + 56px);
+        }
+
+        &:focus {
+            outline: 1px solid rgba(255, 163, 191, 0.5);
+        }
+    }
 
 }
 

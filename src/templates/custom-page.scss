@@ -23,7 +23,6 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: 
-        'title'
         'header'
         'body'
         ;
@@ -31,9 +30,6 @@
         padding-left: 1rem;
         padding-right: 1rem;
 
-        .pageContent__title {
-            grid-area: title;
-        }
         .pageContent__header {
             grid-area: header;
         }

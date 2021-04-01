@@ -7,7 +7,7 @@ import { TransitionLink } from 'gatsby-plugin-transition-link/components/Transit
 import { useForm, ValidationError } from '@formspree/react';
 
 const ContactForm = () => {
-    const [state, handleSubmit] = useForm("meqvjwbl");
+    const [state, handleSubmit] = useForm("placeholder");
     if (state.succeeded) {
         return (
             <div
@@ -176,11 +176,11 @@ const Footer = ({
                         dangerouslySetInnerHTML={{__html: dataFromCMS.address.html ? dataFromCMS.address.html : '' }}
                     />
                 </div>
-                <div
+{/*                 <div
                     className="navDiv__subscribeDiv"
                 >
                     <ContactForm />
-                </div>
+                </div> */}
             </div>
             <div
                 className="footer__bottomDecoration"

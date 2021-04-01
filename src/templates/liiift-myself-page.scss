@@ -4,7 +4,6 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: 
-        'title'
         'header'
         'body'
         'links'
@@ -14,9 +13,6 @@
         padding-left: 1rem;
         padding-right: 1rem;
 
-        .pageContent__title {
-            grid-area: title;
-        }
         .pageContent__header {
             grid-area: header;
         }
@@ -29,7 +25,6 @@
             display: grid;
             grid-template-columns: 3fr 1fr;
             grid-template-areas: 
-            'title '
             'header '
             'body'
             ;
@@ -37,9 +32,6 @@
             padding-left: 5vw;
             padding-right: 0;
 
-            .pageContent__title {
-
-            }
             .pageContent__header {
 
             }

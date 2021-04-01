@@ -57,11 +57,6 @@ const CustomPage = ({
         <div
           className={`custom-page_Page__content`}
         >
-          <div
-            className={`pageContent__title`}
-          >
-            {customPage.title}
-          </div>
           {
             customPage.lead && customPage.lead.html
             ?

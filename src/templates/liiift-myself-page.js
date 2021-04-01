@@ -51,11 +51,6 @@ const LiiiftMyselfSeparatePage = ({
           className={`liiift-myself-page_Page__content`}
         >
           <div
-            className={`pageContent__title`}
-          >
-            {pageData.title}
-          </div>
-          <div
             className={`pageContent__header`}
             dangerouslySetInnerHTML={{
               __html: pageData.header

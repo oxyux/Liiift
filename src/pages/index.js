@@ -116,6 +116,22 @@ const IndexPage = ({
                 >
                   L<span style={{color: 'var(--main-color-peach)'}}>iii</span>ft myself
                 </TransitionLink>
+                <TransitionLink
+                  to="/our-people/"
+                  style={{
+                    marginRight: '16px'
+                  }}
+                  exit={{
+                    length: 0.8,
+                    state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+                  }}
+                  entry={{
+                    delay: 0.6,
+                    state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+                  }}
+                >
+                  Meet the L<span style={{color: 'var(--main-color-peach)'}}>iii</span>ft People 
+                </TransitionLink>
             </div>
           </div>
         </div>
