@@ -52,7 +52,7 @@
         min-height: 400px;
 
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
 
         img {
             z-index: -1;
@@ -127,6 +127,32 @@
                 }
             }
 
+            .contentDivcaseStudy__ctaLink {
+                position: relative;
+                display: block;
+            
+                font-weight: 700;
+                color: var(--main-color-dark);
+                text-decoration: none;
+            
+                width: fit-content;
+            
+                padding: .5rem;
+            
+                border: 2px var(--main-color-dark) solid;
+            
+                transition: .3s ease-in-out;
+            
+                h2 {
+                    margin: 0;
+                }
+            
+                &:hover {
+                    background-color: var(--main-color-dark);
+                    color: #FFFFFF;
+                }
+            }
+
             p {
                 color: var(--main-color-dark);
             }
@@ -197,6 +223,8 @@
         min-height: 400px;
 
         margin-top: 6rem;
+
+        margin-bottom: 4rem;
 
         img {
             z-index: -1;
@@ -274,6 +302,33 @@
                     transform: scaleX(1);
                 }
             }
+            .contentDivcaseStudy__ctaLink {
+                position: relative;
+                display: block;
+            
+                font-weight: 700;
+                color: var(--main-color-dark);
+                text-decoration: none;
+            
+                width: fit-content;
+            
+                padding: .5rem;
+            
+                border: 2px var(--main-color-dark) solid;
+            
+                transition: .3s ease-in-out;
+            
+                h2 {
+                    margin: 0;
+                }
+            
+                &:hover {
+                    background-color: var(--main-color-dark);
+                    color: #FFFFFF;
+                }
+            }
+
+
 
             p {
                 color: var(--main-color-dark);
@@ -331,6 +386,32 @@
                 }
                 p {
                     color: #FFFFFF;
+                }
+
+                .contentDivcaseStudy__ctaLink {
+                    position: relative;
+                    display: block;
+                
+                    font-weight: 700;
+                    color: #FFFFFF;
+                    text-decoration: none;
+                
+                    width: fit-content;
+                
+                    padding: .5rem;
+                
+                    border: 2px #FFFFFF solid;
+                
+                    transition: .3s ease-in-out;
+                
+                    h2 {
+                        margin: 0;
+                    }
+                
+                    &:hover {
+                        background-color: #FFFFFF;
+                        color: var(--main-color-dark);
+                    }
                 }
 
                 @media (min-width: 1200px) {
@@ -462,6 +543,32 @@
                     transition: transform .95s cubic-bezier(.19,1,.22,1);
                     transition: transform .95s cubic-bezier(.19,1,.22,1);
                 }
+
+                .contentDivcaseStudy__ctaLink {
+                    position: relative;
+                    display: block;
+                
+                    font-weight: 700;
+                    color: #FFFFFF;
+                    text-decoration: none;
+                
+                    width: fit-content;
+                
+                    padding: .5rem;
+                
+                    border: 2px #FFFFFF solid;
+                
+                    transition: .3s ease-in-out;
+                
+                    h2 {
+                        margin: 0;
+                    }
+                
+                    &:hover {
+                        background-color: #FFFFFF;
+                        color: var(--main-color-dark);
+                    }
+                }
             }
             .contentDivcaseStudy__link:hover {
 
@@ -517,7 +624,6 @@
                             line-height: 64px;
                         }
                 
-     
                     }
                     p {
                         font-size: 24px;

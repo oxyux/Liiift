@@ -46,6 +46,22 @@ const BlogItemPost = ({
         <p>
           {post.previewText}
         </p>
+        <TransitionLink
+            to={`/blog/${post.slug}`}
+            className="contentDivcaseStudy__ctaLink"
+            exit={{
+              length: 0.4,
+              state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+            }}
+            entry={{
+              delay: 0.6,
+              state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+            }}
+        >
+          <h2>
+              Read now
+          </h2>
+        </TransitionLink>  
       </div>
     </div>
   );
@@ -120,6 +136,22 @@ const BlogItemPostFirst = ({
         <p>
           {post.previewText}
         </p>
+        <TransitionLink
+            to={`/blog/${post.slug}`}
+            className="contentDivcaseStudy__ctaLink"
+            exit={{
+              length: 0.4,
+              state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+            }}
+            entry={{
+              delay: 0.6,
+              state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+            }}
+        >
+          <h2>
+              Read now
+          </h2>
+        </TransitionLink>  
       </div>
     </div>
   )

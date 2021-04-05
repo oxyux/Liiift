@@ -45,4 +45,44 @@
             
         }
     }
+
+    .liiift-myself_Page__linksDiv {
+        grid-area: links;
+
+        margin-bottom: 5vh;
+
+        margin-left: 1rem;
+
+        a {
+            position: relative;
+            display: block;
+
+            font-weight: 700;
+            color: var(--main-color-dark);
+            text-decoration: none;
+
+            width: fit-content;
+
+            padding: 1rem;
+            margin-bottom: 1rem;
+
+            border: 2px var(--main-color-dark) solid;
+
+            transition: .3s ease-in-out;
+            &:hover {
+                background-color: var(--main-color-dark);
+                color: #FFFFFF;
+            }
+        }
+
+        @media (min-width: 769px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-left: 5vw;
+        }
+
+        @media (min-width: 1200px) {
+            margin-left: 12vw;
+        }
+    }
 }

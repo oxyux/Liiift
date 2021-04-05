@@ -10,9 +10,10 @@ import Footer from '../components/footer/Footer';
 
 import '../content-general.scss';
 import './liiift-myself-page.scss';
+import { TransitionLink } from 'gatsby-plugin-transition-link/components/TransitionLink';
 
 const LiiiftMyselfSeparatePage = ({
-    data: { pageData },
+    data: { pageData, linksData },
     mount, transitionStatus, entry, exit
 }) => {
 
@@ -63,7 +64,33 @@ const LiiiftMyselfSeparatePage = ({
             }}
           />
         </div>
-        <Footer />
+        <div
+          className={`liiift-myself_Page__linksDiv`}
+        >
+          {linksData.edges.filter(edge => edge.node.title !== pageData.title).map(edge => (
+            <div
+              key={edge.node.lDeviceTitle}
+            >
+              <TransitionLink
+                to={`/liiift-myself/${edge.node.slug}`}
+                style={{
+                  marginRight: '16px'
+                }}
+                exit={{
+                  length: 0.4,
+                  state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+                }}
+                entry={{
+                  delay: 0.6,
+                  state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+                }}
+              >
+                {edge.node.title}
+              </TransitionLink>       
+            </div>
+          ))}
+      </div>
+      <Footer />
       </motion.div>
     );
 }
@@ -82,6 +109,15 @@ export const pageQuery = graphql`
                 fileName
                 url
             }
+        }
+        linksData: allGraphCmsLiiiftMyselfPage {
+          edges {
+            node {
+              slug
+              lDeviceTitle
+              title
+            }
+          }
         }
     }
 `;
