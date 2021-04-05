@@ -58,9 +58,10 @@ const LiiiftMyselfSeparatePage = ({
           />
           <div
             className={`pageContent__body`}
-          >
-            {pageData.body}
-          </div>
+            dangerouslySetInnerHTML={{
+              __html: pageData.body
+            }}
+          />
         </div>
         <Footer />
       </motion.div>
