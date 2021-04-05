@@ -93,9 +93,11 @@ const OurPeoplePage = ({
         <h4>
           {dataFromCMS.expert1Title}
         </h4>
-        <p>
-          {dataFromCMS.expert1Body}
-        </p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: dataFromCMS.expert1Body
+          }}
+        />
       </div>
       <div
         className={`our-people_Page__expertDiv`}
@@ -116,9 +118,11 @@ const OurPeoplePage = ({
         <h4>
           {dataFromCMS.expert2Title}
         </h4>
-        <p>
-          {dataFromCMS.expert2Body}
-        </p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: dataFromCMS.expert2Body
+          }}
+        />
       </div>
       {
         dataFromCMS.expertsVideoUrl
