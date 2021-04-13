@@ -2,8 +2,29 @@ fragment LiiiftMyBusinessPage on LiiiftMyBusinessPage {
   stage
   remoteId: id
   createdAt
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   updatedAt
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   publishedAt
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   slug
   lDeviceImage {
     ... on Asset {
@@ -17,5 +38,6 @@ fragment LiiiftMyBusinessPage on LiiiftMyBusinessPage {
   title
   header
   body
+  metaTitle
   metaDescription
 }

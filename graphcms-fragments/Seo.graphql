@@ -2,8 +2,29 @@ fragment Seo on Seo {
   stage
   remoteId: id
   createdAt
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   updatedAt
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   publishedAt
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   ogImage {
     ... on Asset {
       remoteTypeName: __typename
