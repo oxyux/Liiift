@@ -1,0 +1,44 @@
+fragment HearFromSean on HearFromSean {
+  stage
+  remoteId: id
+  createdAt
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedAt
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedAt
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  metaTitle
+  metaDescription
+  lDeviceVideo {
+    ... on HearFromVideo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  hearFromVideos {
+    ... on HearFromVideo {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}

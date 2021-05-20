@@ -106,6 +106,22 @@ const OurPeoplePage = ({
             __html: dataFromCMS.expert1Body
           }}
         />
+        <TransitionLink
+          to={`/hear-from-sean/`}
+          style={{
+            marginRight: '16px'
+          }}
+          exit={{
+            length: 0.4,
+            state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+          }}
+          entry={{
+            delay: 0.6,
+            state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+          }}
+        >
+          Hear more from Sean
+        </TransitionLink>
       </div>
       <div
         className={`our-people_Page__expertDiv`}
@@ -131,6 +147,22 @@ const OurPeoplePage = ({
             __html: dataFromCMS.expert2Body
           }}
         />
+        <TransitionLink
+          to={`/hear-from-dawn/`}
+          style={{
+            marginRight: '16px'
+          }}
+          exit={{
+            length: 0.4,
+            state: { x: typeof window !== 'undefined' ? -window.innerWidth : 0, opacity: 0 }
+          }}
+          entry={{
+            delay: 0.6,
+            state: { x: typeof window !== 'undefined' ? window.innerWidth : 0 }
+          }}
+        >
+          Hear more from Dawn
+        </TransitionLink>
       </div>
       {
         dataFromCMS.expertsVideoUrl

@@ -1,0 +1,272 @@
+.lDeviceVideoHearFrom__container {
+    position: relative;
+
+    margin-bottom: 40px;
+
+    .lDeviceVideoHearFrom__svgImgWrapper {
+        position: relative;
+
+        .lDeviceVideoHearFrom__svgDiv {
+            display: none;
+
+            position: relative;
+    
+            height: 100%;
+    
+            z-index: 2;
+    
+            svg {
+                position: absolute;
+                left: 18px;
+                bottom: 0;
+
+                width: auto;
+                height: 150px;
+            }
+    
+        }
+    
+    }
+    
+@media (min-width: 480px) {
+
+    .lDeviceVideoHearFrom__svgImgWrapper {
+        position: relative;
+    
+        height: 395px;
+
+        .lDeviceVideoHearFrom__svgDiv {
+            position: absolute;
+    
+            height: 100%;
+    
+            z-index: 2;
+    
+            svg {
+                height: 190px;
+            }
+    
+        }
+
+    }
+
+}
+
+@media (min-width: 769px) {
+    height: 424px;
+
+    .lDeviceVideoHearFrom__svgImgWrapper {
+        width: 100%;
+        height: 424px;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        
+
+        .lDeviceVideoHearFrom__svgDiv {
+            display: block;
+            width: 450px;
+    
+            svg {
+                left: 20px;
+
+                height: 270px;
+            }
+    
+        }
+    
+
+    }
+
+}
+@media (min-width: 1460px) {
+    min-height: 90vh;
+    height: fit-content;
+
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+
+    .lDeviceVideoHearFrom__svgImgWrapper {
+        width: 100%;
+        height: 755px;
+
+        display: flex;
+        align-items: flex-end;
+
+        .lDeviceVideoHearFrom__svgDiv {
+            width: 724px;
+    
+            svg {
+                right: initial;
+                left: 20px;
+
+                height: 440px;
+            }
+    
+        }
+    
+    }
+
+}
+
+@media (min-width: 1800px) {
+    margin-top: 2rem;
+    .lDeviceVideoHearFrom__svgImgWrapper {
+        width: 100%;
+        height: 855px;
+
+        display: flex;
+        align-items: flex-end;
+
+        .lDeviceVideoHearFrom__svgDiv {
+            width: 1124px;
+    
+            svg {
+                right: initial;
+                left: 20px;
+
+                height: 540px;
+            }
+    
+        }
+    
+    }
+
+}
+}
+
+.lDeviceVideoHearFrom__videoHearFrom {
+    display: block;
+
+    position: relative;
+    width: 100%;
+    height: 250px;
+
+    margin-right: 2rem;
+
+    z-index: 30;
+
+    .lDeviceVideoHearFrom__videoHearFrom__titleDiv {
+        position: absolute;
+        z-index: 10;
+
+        width: 100%;
+        height: 240px;
+
+        color: #FFFFFF;
+
+        left: 0;
+        top: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        
+        padding-left: 8px;
+
+        div {
+            font-size: 16px;
+            line-break: normal !important;
+            white-space: normal !important;
+        }
+
+        .lDeviceVideoHearFrom__videoHearFrom__titleDiv__playSVG {
+            position: absolute;
+            top: 45%;
+            left: calc(50% - 8px);
+        }
+
+        @media (min-width: 769px) {
+            width: 700px;
+            height: 290px;
+
+
+            padding-left: 2rem;
+
+            div {
+                font-size: 24px;
+                line-break: normal !important;
+                white-space: normal !important;
+            }
+            .lDeviceVideoHearFrom__videoHearFrom__titleDiv__playSVG {
+                width: 86px;
+                height: 86px;
+                top: 45%;
+                left: calc(50% - 43px);
+            }
+        }
+
+        @media (min-width: 1460px) {
+            width: 1400px;
+            height: 740px;
+
+            padding-left: 4rem;
+
+            div {
+                font-size: 72px;
+                line-height: 86px;
+                max-width: 80%;
+                line-break: normal !important;
+                white-space: normal !important;
+            }
+            .lDeviceVideoHearFrom__videoHearFrom__titleDiv__playSVG {
+                width: 140px;
+                height: 140px;
+                top: 48%;
+                left: calc(50% - 70px);
+            }
+        }
+    }
+    .lDeviceVideoHearFrom__videoHearFrom__titleDiv--visible {
+        display: flex;
+    }
+    .lDeviceVideoHearFrom__videoHearFrom__titleDiv-hidden {
+        display: none;
+    }
+
+
+    video {
+       object-fit: cover;
+
+        z-index: 10;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: 250px;
+
+        @media (min-width: 769px) {
+            width: 700px;
+            height: 350px;
+        }
+
+        @media (min-width: 1460px) {
+            width: 1400px;
+            height: 800px;
+        }
+    }
+
+    @media (min-width: 769px) {
+        width: 700px;
+        height: 350px;
+
+        margin-bottom: 47px;
+        margin-left: 74px;
+    }
+
+    @media (min-width: 1460px) {
+        width: 1400px;
+        height: 800px;
+
+        margin-bottom: 76px;
+        margin-left: 108px;
+    }
+    @media (min-width: 1800px) {
+        margin-bottom: 94px;
+        margin-left: 128px;
+    }
+}

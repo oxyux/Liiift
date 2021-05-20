@@ -72,6 +72,39 @@
         }
 
         .our-people_Page__expertDiv {
+
+            a {
+                display: block;
+
+                text-align: center;
+
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+
+                text-decoration: none;
+
+                color: var(--main-color-dark);
+                font-weight: bold;
+                font-size: larger;
+
+                border: 1px solid var(--main-color-dark);
+
+                padding: 1rem;
+
+                @media (min-width: 769px) {
+                    width: fit-content;
+                    text-align: initial;
+                }
+
+                transition: .2s ease-in-out;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--main-color-dark);
+                    color: #FFFFFF;
+                }
+            }
         }
 
         .our-people_Page__videoDiv {
