@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { graphql } from "gatsby";
 
 import { motion } from "framer-motion";
@@ -12,11 +12,18 @@ import ImageGrid from "../components/blocks/ImageGrid";
 import '../content-general.scss';
 import './custom-page.scss';
 import LDevicePage from "../components/l-device/lDevicePage";
+import { topnavColorContext } from "../../provider";
 
 const CustomPage = ({
     data: { customPage },
     mount, transitionStatus, entry, exit
 }) => {
+    const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+    useEffect(() => {
+        changeMainColor('var(--main-color-peach)');
+        changeColor('var(--main-color-peach)');
+    }, []);
 
     return (
       <motion.div
@@ -37,7 +44,10 @@ const CustomPage = ({
           { duration: 0.4 }
         }
       >
-        <SEO title={customPage.title} />
+        <SEO 
+          title={customPage.title} 
+          description={customPage.metaDescription}
+        />
         <div>
           {
             customPage.lDeviceImage

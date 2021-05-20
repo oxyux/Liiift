@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import TransitionLink from 'gatsby-plugin-transition-link';
 
@@ -9,11 +9,18 @@ import Layout from "../components/layout/layout"
 
 import './homepage.scss'
 import { AnimatePresence, motion } from "framer-motion";
+import { topnavColorContext } from "../../provider";
 
 const IndexPage = ({ 
   data, 
   mount, transitionStatus, entry, exit
 }) => {
+  const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+  useEffect(() => {
+      changeMainColor('var(--main-color-peach)');
+      changeColor('var(--main-color-peach)');
+  }, []);
 
 
   let dataFromCMS = data.allGraphCmsLandingPage.edges[0].node;

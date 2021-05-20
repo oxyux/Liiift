@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
@@ -8,10 +8,17 @@ import Footer from '../components/footer/Footer';
 
 import './blog.scss';
 import { TransitionLink } from 'gatsby-plugin-transition-link/components/TransitionLink';
+import { topnavColorContext } from '../../provider';
 
 const BlogItemPost = ({
   post
 }) => {
+  const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+  useEffect(() => {
+      changeMainColor('var(--main-color-peach)');
+      changeColor('var(--main-color-peach)');
+  }, []);
 
   return (
     <div

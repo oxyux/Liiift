@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
@@ -11,12 +11,19 @@ import Footer from '../components/footer/Footer';
 import '../content-general.scss';
 import './liiift-my-business-page.scss';
 import { TransitionLink } from 'gatsby-plugin-transition-link/components/TransitionLink';
+import { topnavColorContext } from '../../provider';
 
 
 const LiiiftMyBusinessSeparatePage = ({
     data: { pageData, linksData },
     mount, transitionStatus, entry, exit
 }) => {
+    const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+    useEffect(() => {
+        changeMainColor('var(--main-color-peach)');
+        changeColor('var(--main-color-peach)');
+    }, []);
 
     return (
         <motion.div

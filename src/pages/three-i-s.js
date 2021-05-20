@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
@@ -9,11 +9,19 @@ import Footer from '../components/footer/Footer';
 
 import './three-i-s.scss';
 import LDeviceVideo from '../components/l-device/lDeviceVideo';
+import { topnavColorContext } from '../../provider';
 
 const ThreeIsPage = ({
   data,
   mount, transitionStatus, entry, exit
 }) => {
+  const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+  useEffect(() => {
+      changeMainColor('var(--main-color-peach)');
+      changeColor('var(--main-color-peach)');
+  }, []);
+
   let dataFromCMS = data.allGraphCmsThreeIs.edges[0].node;
 
   let dataCTAlinks = data.allGraphCmsFooter.edges[0].node;

@@ -122,13 +122,6 @@ const Footer = ({
                 >
                     <ul>
                         <li>
-                            <a
-                                href="/sitemap.xml"
-                            >
-                                Sitemap
-                            </a>  
-                        </li>
-                        <li>
                             <TransitionLink
                                 to={`/`}
                             >

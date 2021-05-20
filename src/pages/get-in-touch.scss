@@ -1,0 +1,243 @@
+.getInTouchPage__container {
+    width: 100%;
+    min-height: calc(100vh - 240px);
+
+    background-color: var(--main-color-peach);
+
+
+
+.getInTouchPage__mainSection {
+    width: 100%;
+
+    color: var(--main-color-dark);
+
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+    .leadDiv {
+        margin-bottom: .5rem;
+    }
+
+    .getInTouchPage__form {
+        position: relative;
+
+        & > input {
+            display: block;
+
+            width: 100%;
+            padding: .5rem;
+
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent;
+
+            margin-bottom: .5rem;
+
+            &:focus {
+                outline: none;
+                border-color: var(--main-color-dark);
+            }
+        }
+
+
+        .getInTouchPage__form__radioBtnContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            margin-bottom: .5rem;
+
+            .radioBtnContainer__heading {
+                width: 100%;
+
+                font-weight: bold;
+
+                margin-bottom: .5rem;
+            }
+            .radioBtnContainer__item {
+                margin-right: .5rem;
+
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 12px;
+                cursor: pointer;
+
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                label {
+                    cursor: pointer;
+                }
+
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .checkmark {
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    height: 18px;
+                    width: 18px;
+                    background-color: #eee;
+                    border-radius: 50%;
+
+                    cursor: pointer;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                }
+
+                input:checked ~ .checkmark:after {
+                    display: block;
+                }
+
+                .checkmark:after {
+                   top: 4px;
+                   left: 4px;
+                   width: 10px;
+                   height: 10px;
+                   border-radius: 50%;
+                   background: #000;
+               }
+
+                &:hover {
+                    input ~ .checkmark {
+                        background-color: #ccc;
+                    }
+                }
+                
+
+                input:checked ~ .checkmark {
+                    background-color: #FFFFFF;
+                }
+                  
+            }
+        }
+
+        .getInTouchPage__form__submitContainer {
+            display: flex;
+
+            button {
+                display: block;
+
+                height: 3rem;
+    
+                border: 1px solid var(--main-color-dark);
+                background-color: transparent;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+
+                margin-right: 1rem;
+    
+                transition: .2s ease-in-out;
+    
+                &:not([disabled]):hover {
+                    color: #FFFFFF;
+                    background-color: var(--main-color-dark);
+                }
+                &:not([disabled]):focus {
+                    color: #FFFFFF;
+                    background-color: var(--main-color-dark);
+                    outline: none;
+                }
+                &:disabled {
+                    opacity: .5;
+                    cursor: default;
+                }
+            }
+    
+            .getInTouchPage__form__notQualified {
+                display: none;
+
+                background-color: var(--main-color-dark);
+                color: #FFFFFF;
+
+                padding: .5rem;
+
+                margin-bottom: .5rem;
+
+                a {
+                    color: inherit;
+                }
+            }
+            .getInTouchPage__form__notQualified--visible {
+                display: block;
+            }
+        }
+
+        
+    }
+
+
+    .contactPage__bottomDiv {
+        a {
+            color: inherit;
+            font-weight: bold;
+        }
+
+        padding-bottom: 4rem;
+    }
+
+    @media (min-width: 769px) {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    @media (min-width: 1200px) {
+        padding-left: 12vw;
+        
+        width: 60%;
+
+
+        .leadDiv {
+            margin-bottom: 1.5rem;
+        }
+    
+        .getInTouchPage__form {
+    
+            & > input {    
+                margin-bottom: 1rem;
+            }
+    
+    
+            .getInTouchPage__form__radioBtnContainer {
+                justify-content: flex-start;
+    
+                margin-bottom: 1rem;
+    
+                .radioBtnContainer__heading {
+                    margin-bottom: 1rem;
+                }
+                .radioBtnContainer__item {
+                    margin-right: 1rem;                      
+                }
+            }
+    
+            .getInTouchPage__form__submitContainer {
+
+                .getInTouchPage__form__notQualified {   
+                    
+                    margin-bottom: 1rem;
+                }
+            }
+    
+            
+        }
+    }
+}
+
+
+}

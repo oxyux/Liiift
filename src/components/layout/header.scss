@@ -20,7 +20,6 @@
         outline: none;
     }
     .header__burgerBtn span {
-        background-color: var(--main-color-peach);
         display: block;
         height: 2px;
         left: calc(50% - 8px);
@@ -40,7 +39,7 @@
         top: calc(50% + 4px);
     }
     .header__burgerBtn--open span {
-        background-color: var(--main-color-peach);
+        background-color: var(--main-color-peach) !important;
         display: block;
         height: 2px;
         left: calc(50% - 8px);

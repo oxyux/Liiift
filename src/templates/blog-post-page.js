@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
@@ -13,11 +13,18 @@ import './blog-post-page.scss';
 import LDeviceVideo from '../components/l-device/lDeviceVideo';
 import RichTextBlock from '../components/blocks/RichTextBlock';
 import ImageGrid from '../components/blocks/ImageGrid';
+import { topnavColorContext } from '../../provider';
 
 const BlogPostPage = ({ 
     data: { blogPost },
     mount, transitionStatus, entry, exit
 }) => {
+    const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+    useEffect(() => {
+        changeMainColor('var(--main-color-peach)');
+        changeColor('var(--main-color-peach)');
+    }, []);
 
     return (
     <motion.div

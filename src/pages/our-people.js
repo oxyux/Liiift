@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
@@ -14,11 +14,19 @@ import '../content-general.scss';
 import './our-people.scss';
 import Footer from "../components/footer/Footer";
 import CaseStudiesSlider from "../components/casestudies-slider/CasestudiesSlider";
+import { topnavColorContext } from "../../provider";
 
 const OurPeoplePage = ({ 
   data,
   mount, transitionStatus, entry, exit
 }) => {
+  const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+  useEffect(() => {
+      changeMainColor('var(--main-color-peach)');
+      changeColor('var(--main-color-peach)');
+  }, []);
+
   let dataFromCMS = data.allGraphCmsOurPeopleMain.edges[0].node;
   let caseStudies = data.allGraphCmsCaseStudy.edges
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
@@ -10,11 +10,18 @@ import Footer from '../components/footer/Footer';
 
 import '../content-general.scss';
 import './case-study-page.scss';
+import { topnavColorContext } from '../../provider';
 
 const CaseStudyPage = ({
     data: { caseStudy },
     mount, transitionStatus, entry, exit
 }) => {
+    const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+    useEffect(() => {
+        changeMainColor('var(--main-color-peach)');
+        changeColor('var(--main-color-peach)');
+    }, []);
 
     return (
         <motion.div

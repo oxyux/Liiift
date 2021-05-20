@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
@@ -13,11 +13,20 @@ import TransitionLink from 'gatsby-plugin-transition-link';
 import '../content-general.scss';
 import './liiift-myself.scss';
 import Footer from "../components/footer/Footer";
+import { topnavColorContext } from "../../provider";
 
 const LiiiftMyselfPage = ({ 
   data,
   mount, transitionStatus, entry, exit
 }) => {
+
+  const { changeColor, changeMainColor } = useContext(topnavColorContext);
+
+  useEffect(() => {
+      changeMainColor('var(--main-color-peach)');
+      changeColor('var(--main-color-peach)');
+  }, []);
+
   let dataFromCMS = data.allGraphCmsLiiiftMyselfMain.edges[0].node;
 
   let pages = data.allGraphCmsLiiiftMyselfPage.edges
