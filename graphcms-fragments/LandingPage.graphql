@@ -32,4 +32,5 @@ fragment LandingPage on LandingPage {
   liiiftMyBusiness
   liiiftMyself
   metaDescription
+  metaTitle
 }

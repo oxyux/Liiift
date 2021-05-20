@@ -53,4 +53,5 @@ fragment BlogPost on BlogPost {
   author
   publicationDate
   metaDescription
+  metaTitle
 }

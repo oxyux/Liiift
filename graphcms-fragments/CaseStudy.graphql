@@ -71,4 +71,5 @@ fragment CaseStudy on CaseStudy {
   }
   bottomQuoteAuthor
   metaDescription
+  metaTitle
 }

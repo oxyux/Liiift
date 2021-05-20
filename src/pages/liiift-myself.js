@@ -51,7 +51,7 @@ const LiiiftMyselfPage = ({
     }
   >
     <SEO 
-      title="Liiift Myself" 
+      title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Liiift Myself" }
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift Myself`}
     />
     <div>
@@ -153,6 +153,7 @@ query LiiiftMyselfMainQuery {
           title
           body
           header
+          metaTitle
           metaDescription
           lDeviceImage {
             url

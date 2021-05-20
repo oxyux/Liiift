@@ -46,7 +46,7 @@ const BlogPostPage = ({
         }
       >
         <SEO 
-          title={blogPost.title} 
+          title={blogPost.metaTitle ? blogPost.metaTitle : blogPost.title} 
           description={blogPost.metaDescription ? blogPost.metaDescription : ``}
         />
         <div>
@@ -121,6 +121,7 @@ export const pageQuery = graphql`
             publicationDate
             headerVideoUrl
             author
+            metaTitle
             metaDescription
             headerImage {
                 url

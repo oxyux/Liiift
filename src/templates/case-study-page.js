@@ -43,7 +43,7 @@ const CaseStudyPage = ({
         }
       >
         <SEO 
-          title={caseStudy.title} 
+          title={caseStudy.metaTitle ? caseStudy.metaTitle : caseStudy.title} 
           description={caseStudy.metaDescription ? caseStudy.metaDescription : ``}
         />
         <div>
@@ -144,6 +144,7 @@ export const pageQuery = graphql`
             id
             header
             slug
+            metaTitle
             metaDescription
             title
             lDeviceTitle

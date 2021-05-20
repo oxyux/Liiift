@@ -45,7 +45,7 @@ const CustomPage = ({
         }
       >
         <SEO 
-          title={customPage.title} 
+          title={customPage.metaTitle ? customPage.metaTitle : customPage.title} 
           description={customPage.metaDescription}
         />
         <div>
@@ -120,6 +120,7 @@ export const pageQuery = graphql`
 query CustomPageQuery($id: String!) {
      
       customPage: graphCmsCustomPage(id: { eq: $id }) {
+      metaTitle
       metaDescription
       slug
       title

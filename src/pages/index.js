@@ -45,7 +45,7 @@ const IndexPage = ({
         }
       >
         <SEO 
-          title="Home" 
+          title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Home" }
           description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift Consultancy agency based in Liverpool`}
         />
         <div
@@ -157,6 +157,7 @@ export const query = graphql`
       edges {
         node {
           id
+          metaTitle
           metaDescription
           liiiftMyBusiness
           liiiftMyself

@@ -52,7 +52,7 @@ const LiiiftMyBusinessPage = ({
     }
   >
     <SEO 
-      title="Liiift My Business" 
+      title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Liiift My Business"} 
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift My Business`}
     />
     <div>
@@ -153,6 +153,7 @@ query LiiiftMyBusinessMainQuery {
           title
           body
           header
+          metaTitle
           metaDescription
           lDeviceImage {
             url

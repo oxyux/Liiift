@@ -63,4 +63,5 @@ fragment OurPeopleMain on OurPeopleMain {
   clientsVideoUrl
   clientsVideoTitle
   metaDescription
+  metaTitle
 }

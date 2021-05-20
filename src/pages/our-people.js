@@ -50,7 +50,7 @@ const OurPeoplePage = ({
     }
   >
     <SEO 
-      title="Our People" 
+      title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Our People" }
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Our People`}
     />
     <div>
@@ -280,6 +280,8 @@ query OurPeopleQuery {
             url
             fileName
           }
+          metaTitle
+          metaDescription
           lDeviceTitle
           lDeviceImage {
             fileName

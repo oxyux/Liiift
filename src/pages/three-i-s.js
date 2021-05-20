@@ -46,7 +46,7 @@ const ThreeIsPage = ({
     }
   >
     <SEO 
-      title="Three i's of Liiift" 
+      title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Three i's of Liiift"  }
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Three i's of Liiift`}
     />
       <div>
@@ -215,6 +215,7 @@ query ThreeIsQuery {
           para1
           para2
           para3
+          metaTitle
           metaDescription
           lDeviceImage {
             url

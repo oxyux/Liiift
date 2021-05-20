@@ -48,6 +48,7 @@ fragment CustomPage on CustomPage {
     }
   }
   metaDescription
+  metaTitle
   lDeviceTitle
   lDeviceImage {
     ... on Asset {
