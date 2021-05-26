@@ -41,7 +41,7 @@ const VideoHearFrom= ({
                 className={`videoHearFrom__titleDiv ${isTitleVisible ? 'videoHearFrom__titleDiv--visible' : 'videoHearFrom__titleDiv-hidden'}`}
                 onClick={() => videoRef.current && videoRef.current.play()}
             >
-                <h4>{person}</h4>
+                <h4>{videoHearFrom.title ? person : ''}</h4>
                 <div>
                     {videoHearFrom.title}
                 </div>
