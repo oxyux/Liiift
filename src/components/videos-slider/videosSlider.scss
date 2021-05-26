@@ -4,12 +4,15 @@
     cursor: default !important;
 
     .videosSlider__svgDiv {
+        z-index: -1;
+
         position: absolute;
-        left: 0;
-        bottom: 0;
+        left: -4px;
+        bottom: -22px;
 
         .videosSlider__svg {
-            display: none;
+            display: block;
+            width: 150px;
         }
 
         @media(min-width: 768px) {
@@ -28,7 +31,7 @@
 
     .scrollBackArrow {
         position: absolute;
-        top: 200px;
+        top: 170px;
 
         height: 3rem;
         width: 3rem;
@@ -47,7 +50,7 @@
             height: 100%;
         }
 
-        left: 18px;
+        right: calc(56px + 18px);
 
         @media (min-width: 768px) {
             top: 400px;
@@ -71,7 +74,7 @@
 
     .scrollForwardArrow {
         position: absolute;
-        top: 200px;
+        top: 170px;
 
         height: 3rem;
         width: 3rem;
@@ -120,7 +123,7 @@
             overflow: hidden;
     
             
-            width: 100%;
+            width: calc(100% - 23px);
 
             @media (min-width: 768px) {
                 width: calc(100% - 48px);
