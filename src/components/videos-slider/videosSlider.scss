@@ -132,14 +132,14 @@
 
                 transition: .3s ease-in-out;
 
-                gap: 40px;
+                //gap: 40px;
 
                 @media (min-width: 768px) {
-                    gap: 60px;
+                    //gap: 60px;
                 }
             
                 @media (min-width: 1024px) {
-                    gap: 80px;
+                    //gap: 80px;
                 }
             }
         }
@@ -152,6 +152,17 @@
     position: relative;
     width: 250px;
     height: 150px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
 
     .videoHearFrom__titleDiv {
         position: absolute;
@@ -258,10 +269,16 @@
     @media (min-width: 768px) {
         width: 700px;
         height: 350px;
+
+        margin-left: 30px;
+        margin-right: 30px;
     }
 
     @media (min-width: 1024px) {
         width: 1050px;
         height: 525px;
+
+        margin-left: 40px;
+        margin-right: 40px;
     }
 }
