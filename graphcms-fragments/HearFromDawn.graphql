@@ -27,13 +27,6 @@ fragment HearFromDawn on HearFromDawn {
   }
   metaTitle
   metaDescription
-  lDeviceVideo {
-    ... on HearFromVideo {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
   hearFromVideos {
     ... on HearFromVideo {
       remoteTypeName: __typename

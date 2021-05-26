@@ -49,21 +49,7 @@ fragment HearFromVideo on HearFromVideo {
       stage
     }
   }
-  hearFromDawnLDeviceVideo {
-    ... on HearFromDawn {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
   hearFromSean {
-    ... on HearFromSean {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
-  hearFromSeanLDevice {
     ... on HearFromSean {
       remoteTypeName: __typename
       remoteId: id

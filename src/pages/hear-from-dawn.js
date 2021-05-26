@@ -10,8 +10,6 @@ import './hear-from.scss';
 
 import { topnavColorContext } from '../../provider';
 import VideosSlider from '../components/videos-slider/VideosSlider';
-import LDeviceVideoHearFrom from '../components/l-device/lDeviceVideoHearFrom';
-
 
 const HearFromDawnPage = ({
   data,
@@ -52,10 +50,6 @@ const HearFromDawnPage = ({
       <div
         className="hearFromUsPage"
       >
-        <LDeviceVideoHearFrom
-            videoHearFrom={dataFromCMS.lDeviceVideo}
-            person={`Dawn Tolcher`}
-        />
         <VideosSlider
             videos={dataFromCMS.hearFromVideos}
             person={`Dawn Tolcher`}
@@ -81,19 +75,6 @@ query HearFromDawnQuery {
                     id
                     title
                     videoAsset {
-                        handle
-                        fileName
-                        mimeType
-                        url
-                    }
-                    thumbnailPicture {
-                        url
-                    }
-                }
-                lDeviceVideo {
-                    title
-                    videoAsset {
-                        id
                         handle
                         fileName
                         mimeType

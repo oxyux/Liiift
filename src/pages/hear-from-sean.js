@@ -48,11 +48,9 @@ const HearFromSeanPage = ({
       title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Hear from Sean"  }
       description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Hear from Sean`}
     />
-      <div>
-        <LDeviceVideoHearFrom
-            videoHearFrom={dataFromCMS.lDeviceVideo}
-            person={`Sean O’Neill`}
-        />
+      <div
+        className="hearFromUsPage"
+      >
         <VideosSlider
             videos={dataFromCMS.hearFromVideos}
             person={`Sean O’Neill`}
@@ -84,16 +82,6 @@ query HearFromSeanQuery {
                         url
                     }
                     thumbnailPicture {
-                        url
-                    }
-                }
-                lDeviceVideo {
-                    title
-                    videoAsset {
-                        id
-                        handle
-                        fileName
-                        mimeType
                         url
                     }
                 }
