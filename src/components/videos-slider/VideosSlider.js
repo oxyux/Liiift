@@ -30,6 +30,7 @@ const VideoHearFrom= ({
                 poster={videoHearFrom.thumbnailPicture ? videoHearFrom.thumbnailPicture.url : null}
                 onPlay={() => setTitleVisible(false)}
                 onPause={() => setTitleVisible(true)}
+                preload="none"
                 
             >
                 <source
