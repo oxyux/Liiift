@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import favicon from '../images/l-favicon.svg'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, fullyCustomTitle }) {
   const { site, allGraphCmsSeo } = useStaticQuery(
     graphql`
       query {
@@ -51,7 +51,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={fullyCustomTitle ? null : (defaultTitle ? `%s | ${defaultTitle}` : null)}
       meta={[
         {
           name: `description`,

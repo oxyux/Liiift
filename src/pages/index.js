@@ -47,6 +47,7 @@ const IndexPage = ({
         <SEO 
           title={dataFromCMS.metaTitle ? dataFromCMS.metaTitle : "Home" }
           description={dataFromCMS.metaDescription ? dataFromCMS.metaDescription : `Liiift Consultancy agency based in Liverpool`}
+          fullyCustomTitle={true}
         />
         <div
           className="homepage__wrapper"
