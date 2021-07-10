@@ -52,6 +52,7 @@ const LiiiftMyBusinessSeparatePage = ({
           <LDevicePage
             lDeviceImage={pageData.lDeviceImage}
             lDeviceTitle={pageData.lDeviceTitle}
+            altText={pageData.lDeviceImageAltText}
           />
         </div>
         <div
@@ -115,6 +116,7 @@ export const pageQuery = graphql`
                 fileName
                 url
             }
+            lDeviceImageAltText
         }
         linksData: allGraphCmsLiiiftMyBusinessPage {
           edges {

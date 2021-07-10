@@ -26,7 +26,7 @@ const BlogItemPost = ({
     >
       <img 
         src={post.headerImage.url}
-        alt={post.headerImage.fileName}
+        alt={post.headerImageAltText ? post.headerImageAltText : post.headerImage.fileName}
       />
       <div
         className={`blogItemPost__contentDiv`}
@@ -84,7 +84,7 @@ const BlogItemPostFirst = ({
     >
       <img 
         src={post.headerImage.url}
-        alt={post.headerImage.fileName}
+        alt={post.headerImageAltText ? post.headerImageAltText : post.headerImage.fileName}
       />
         <div
             className={`blogItemPostFullscreen__svgDiv`}
@@ -332,6 +332,7 @@ query BlogMainQuery {
             url
             fileName
           }
+          headerImageAltText
           previewText
           publicationDate
         }

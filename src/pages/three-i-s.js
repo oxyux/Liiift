@@ -54,6 +54,7 @@ const ThreeIsPage = ({
           lDeviceImage={dataFromCMS.lDeviceImage}
           lDeviceTitle={dataFromCMS.lDeviceTitle}
           lColor={`#00384A`}
+          altText={dataFromCMS.lDeviceImageAltText}
         />
         <section
           className={`threeIsSection`}
@@ -221,6 +222,7 @@ query ThreeIsQuery {
             url
             fileName
           }
+          lDeviceImageAltText
           lDeviceTitle
           lDeviceVideoUrl
         }

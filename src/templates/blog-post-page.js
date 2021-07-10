@@ -56,6 +56,7 @@ const BlogPostPage = ({
             <LDevicePage
               lDeviceImage={blogPost.headerImage}
               lDeviceTitle={blogPost.title}
+              altText={blogPost.headerImageAltText}
             />
             :
             <LDeviceVideo 
@@ -127,6 +128,7 @@ export const pageQuery = graphql`
                 url
                 fileName
             }
+            headerImageAltText
             previewText
             publicationDate
             blocks {
@@ -138,7 +140,15 @@ export const pageQuery = graphql`
                  fileName
                  url
                  id
-             }
+              }
+             imageWithAltTexts {
+                image {
+                    fileName
+                    url
+                    id
+                }
+                altText
+              }
              }
               ... on GraphCMS_RichTextBlock {
              id

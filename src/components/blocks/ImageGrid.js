@@ -26,6 +26,16 @@ const ImageGrid = ({
             }}
         >
             {
+                block.imageWithAltTexts && block.imageWithAltTexts.length > 0
+                ?
+                block.imageWithAltTexts && block.imageWithAltTexts.map(imageWithAlt => (
+                    <img
+                        key={imageWithAlt.image.id}
+                        src={imageWithAlt.image.url}
+                        alt={imageWithAlt.altText ? imageWithAlt.altText : imageWithAlt.image.fileName}
+                    />
+                ))
+                :
                 block.image && block.image.map(image => (
                     <img
                         key={image.id}

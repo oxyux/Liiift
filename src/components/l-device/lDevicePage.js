@@ -8,7 +8,8 @@ const LDevicePage = ({
     lDeviceTitle,
     lDeviceImage,
     lColor,
-    lTitleColor
+    lTitleColor,
+    altText
 }) => {
 
     return (
@@ -58,7 +59,7 @@ const LDevicePage = ({
                 >
                     <img
                         src={lDeviceImage.url}
-                        alt={lDeviceImage.fileName}
+                        alt={altText ? altText : lDeviceImage.fileName}
                     />
                 </motion.div>
                 <motion.div

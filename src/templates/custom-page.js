@@ -55,6 +55,7 @@ const CustomPage = ({
             <LDevicePage
               lDeviceImage={customPage.lDeviceImage}
               lDeviceTitle={customPage.lDeviceTitle}
+              altText={customPage.lDeviceImageAltText}
             />
             :
             <h1
@@ -138,6 +139,14 @@ query CustomPageQuery($id: String!) {
             url
             fileName
             handle
+          }
+          imageWithAltTexts {
+            image {
+                fileName
+                url
+                id
+            }
+            altText
           }
         }
          ... on GraphCMS_RichTextBlock {

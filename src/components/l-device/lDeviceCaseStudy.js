@@ -8,7 +8,7 @@ const LDeviceCaseStudy = ({
     lDeviceTitle,
     lDeviceImage,
     lColor,
-    lTitleColor
+    altText
 }) => {
 
     return (
@@ -58,7 +58,7 @@ const LDeviceCaseStudy = ({
                 >
                     <img
                         src={lDeviceImage.url}
-                        alt={lDeviceImage.fileName}
+                        alt={altText ? altText : lDeviceImage.fileName}
                     />
                 </motion.div>
                 <motion.div

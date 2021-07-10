@@ -85,6 +85,7 @@ const LiiiftMyBusinessPage = ({
         }
         lColor={`#00384A`}
         lTitleColor={`#00384A`}
+        altText={dataFromCMS.lDeviceImageAltText}
       />
     </div>
     <div
@@ -132,7 +133,7 @@ const LiiiftMyBusinessPage = ({
       >
         <img
           src={dataFromCMS.bodyImage.url}
-          alt={dataFromCMS.bodyImage.fileName}
+          alt={dataFromCMS.bodyImageAltText ? dataFromCMS.bodyImageAltText : dataFromCMS.bodyImage.fileName}
         />
       </div>
     </div>
@@ -159,11 +160,13 @@ query LiiiftMyBusinessMainQuery {
             url
             fileName
           }
+          lDeviceImageAltText
           lDeviceTitle
           bodyImage {
             url
             fileName
           }
+          bodyImageAltText
         }
       }
     }

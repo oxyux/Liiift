@@ -58,6 +58,7 @@ const OurPeoplePage = ({
         lDeviceImage={dataFromCMS.lDeviceImage}
         lDeviceTitle={dataFromCMS.lDeviceTitle}
         lColor={`#00384A`}
+        altText={dataFromCMS.lDeviceImageAltText}
       />
     </div>
     <div
@@ -93,7 +94,7 @@ const OurPeoplePage = ({
           ?
           <img
             src={dataFromCMS.expert1Image.url}
-            alt={dataFromCMS.expert1Image.filename}
+            alt={dataFromCMS.expert1ImageAltText ? dataFromCMS.expert1ImageAltText : dataFromCMS.expert1Image.filename}
           />
           :
           null
@@ -134,7 +135,7 @@ const OurPeoplePage = ({
           ?
           <img
             src={dataFromCMS.expert2Image.url}
-            alt={dataFromCMS.expert2Image.filename}
+            alt={dataFromCMS.expert2ImageAltText ? dataFromCMS.expert2ImageAltText : dataFromCMS.expert2Image.filename}
           />
           :
           null
@@ -312,6 +313,7 @@ query OurPeopleQuery {
             url
             fileName
           }
+          expert1ImageAltText
           metaTitle
           metaDescription
           lDeviceTitle
@@ -319,10 +321,12 @@ query OurPeopleQuery {
             fileName
             url
           }
+          lDeviceImageAltText
           expert2Image {
             url
             fileName
           }
+          expert2ImageAltText
         }
       }
     }
@@ -340,10 +344,12 @@ query OurPeopleQuery {
             url
             fileName
           }
+          lDeviceImageAltText
           sliderImage {
             url
             fileName
           }
+          sliderImageAltText
         }
       }
     }

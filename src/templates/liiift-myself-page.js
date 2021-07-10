@@ -53,6 +53,7 @@ const LiiiftMyselfSeparatePage = ({
             lDeviceTitle={pageData.lDeviceTitle}
             lColor={`#00384A`}
             lTitleColor={`#00384A`}
+            altText={pageData.lDeviceImageAltText}
           />
         </div>
         <div
@@ -117,6 +118,7 @@ export const pageQuery = graphql`
                 fileName
                 url
             }
+            lDeviceImageAltText
         }
         linksData: allGraphCmsLiiiftMyselfPage {
           edges {

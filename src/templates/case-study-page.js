@@ -50,6 +50,7 @@ const CaseStudyPage = ({
           <LDeviceCaseStudy
             lDeviceImage={caseStudy.lDeviceImage}
             lDeviceTitle={caseStudy.lDeviceTitle}
+            altText={caseStudy.lDeviceImageAltText}
           />
         </div>
         <div
@@ -75,7 +76,8 @@ const CaseStudyPage = ({
                   className={`case-study-page__bottomImg`}
               >
                   <img 
-                      src={caseStudy.bottomImage.url}
+                    src={caseStudy.bottomImage.url}
+                    alt={caseStudy.bottomImageAltText ? caseStudy.bottomImageAltText : caseStudy.bottomImage.fileName}
                   />
               </div>
               :
@@ -149,15 +151,17 @@ export const pageQuery = graphql`
             title
             lDeviceTitle
             lDeviceImage {
-                url
-                fileName
+              url
+              fileName
             }
+            lDeviceImageAltText
             bottomImage {
-                url
-                fileName
+              url
+              fileName
             }
+            bottomImageAltText
             bottomQuoteBody {
-                html
+              html
             }
             bottomQuoteAuthor
         }

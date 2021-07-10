@@ -6,7 +6,8 @@ import './ldevicemain.scss'
 
 const LDeviceMain = ({
     lDeviceTitle,
-    lDeviceImage
+    lDeviceImage,
+    altText
 }) => {
 
     return (
@@ -106,7 +107,7 @@ const LDeviceMain = ({
                 >
                     <img
                         src={lDeviceImage.url}
-                        alt={lDeviceImage.fileName}
+                        alt={altText ? altText : lDeviceImage.fileName}
                     />
                 </motion.div>
                 <motion.div

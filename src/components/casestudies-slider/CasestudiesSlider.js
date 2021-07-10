@@ -18,6 +18,25 @@ const CaseStudy = ({
         >
             <img
                 src={caseStudy.sliderImage ? caseStudy.sliderImage.url : caseStudy.lDeviceImage.url}
+                alt={
+                    caseStudy.sliderImage
+                    ?
+                    (
+                        caseStudy.sliderImageAltText
+                        ?
+                        caseStudy.sliderImageAltText
+                        :
+                        caseStudy.sliderImage.fileName
+                    )
+                    :
+                    (
+                        caseStudy.lDeviceImageAltText
+                        ?
+                        caseStudy.lDeviceImageAltText
+                        :
+                        caseStudy.lDeviceImage.fileName
+                    )
+                }
             />
             <TransitionLink
                 to={`/our-people/${caseStudy.slug}`}
